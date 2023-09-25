@@ -1,2 +1,3 @@
-super username: admin
-password: touken123
+// GET with id: http://127.0.0.1:8000/person/?id=1
+// .save() to get id
+// .delete() to delete
