@@ -9,15 +9,14 @@ def getData(request):
     serializer = ItemSerializer(items, many=True)
     return Response(serializer.data)
 
-@api_view(['POST'])
-def addData(request):
-    serializer = ItemSerializer(data = request.data)
-    if serializer.is_valid():
-        serializer.save()
-    return Response(serializer.data)
-
+# ALL GET METHOD
 @api_view(['GET'])
+
 def getUser(request):
+    '''
+        Get all users if id not specified, get user by id otherwise
+        :returns: the data associated
+    '''
     try: 
         id = request.query_params['id']
         user = User.objects.get(user_id = id)
@@ -27,9 +26,18 @@ def getUser(request):
         serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
 
+
+# ALL POST METHODS
 @api_view(['POST'])
 def addUser(request):
     serializer = UserSerializer(data = request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def addData(request):
+    serializer = ItemSerializer(data = request.data)
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)

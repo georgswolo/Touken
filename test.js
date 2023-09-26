@@ -1,19 +1,17 @@
-import fetch from "node-fetch"
+import { update, getAll, getByID, add } from "./helpers/apiFunctions.js"
 
-async function createTest() {
-    const url = "http://127.0.0.1:8000/add/"
-    const data = {name: "Hazel test 2 from node"}
-    const response = await fetch(url, {
-        method: "POST",
-        headers: {
-            'Accept': "application/json",
-            'Content-Type': "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-    const json = await response.json()
-    console.log(json)
-    return json
+const updateData = {
+    name: "Hazel test update from node",
+    avatar_id: 2
 }
 
-createTest()
+const addData = {
+    name: "Hazel add test from node",
+    avatar_id: 3
+}
+
+
+// update("users", 1, updateData)
+getAll("users")
+getByID("users", 1)
+// add("users", addData)
