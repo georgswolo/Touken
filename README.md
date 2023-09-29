@@ -88,20 +88,20 @@
     - Example: ```getAll("users")```
 
 ##### getByID(target, id)
-- This function gets the data in the table associated with an id
-- **PARAMS**
+- This function gets the data in the table associated with an id <br> 
+**PARAMS**
 - **target** is the table name
 - **id** is the id of the item that you want to fetch
 
 ##### add(target, data)
-- This function adds a new entity to the database (like create a new user, new task,...)
-- **PARAMS**
+- This function adds a new entity to the database (like create a new user, new task,...) <br> 
+**PARAMS**
 - **target** is the table name
 - **data** is the JSON object that matches the requested structure in a table (See [Example model](#example-model))
 
 ##### update(target, id, data)
-- This functions updates an item (that has the provided id) with the given data 
-- **PARAMS**
+- This functions updates an item (that has the provided id) with the given data <br> 
+**PARAMS**
 - **target** is the table name
 - **id** is the id of the item that you want to update
 - **data** is the JSON object that matches the requested structure in a table (See [Example model](#example-model))
