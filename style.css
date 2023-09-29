@@ -1,8 +1,56 @@
+
+@import url('https://fonts.cdnfonts.com/css/barbie');
+
+                
+
 h1 {
     color:deeppink;
     height: 100%;
+    font-family: 'Barbie', sans-serif;
+    font-size: 100px;
 }
 
 * {
     background-color: lightpink;
 }
+
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #db43a3;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+  
+  .container:hover .overlay {
+    width: 100%;
+  }
+  
+  .text {
+    white-space: nowrap; 
+    font-family: 'Barbie', sans-serif;
+    color: rgb(236, 200, 237);
+    background-color: #db43a3;
+    font-size: 50px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
