@@ -1,9 +1,7 @@
-<>
-    <h5>GET/ PUT with id: http://127.0.0.1:8000/person/?id=1</h5> 
-    <h3>Some operations</h3>
-    <p>.save() to get id</p>
-    <p>.delete() to delete</p>
-    <p>TO UPDATE HAS TO PROVIDE ALL NEEDED FIELDS (apart from id)</p>
-    <p>Delete all data from a table: {model_name}.objects.all().delete()</p>
-</>
+GET/ PUT with id: http://127.0.0.1:8000/person/?id=1
+Some operations
+.save() to get id
+.delete() to delete
+TO UPDATE HAS TO PROVIDE ALL NEEDED FIELDS (apart from id)
+Delete all data from a table: {model_name}.objects.all().delete()
 
