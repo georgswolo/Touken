@@ -4,9 +4,9 @@
 - The server for the API is in the **database** folder.
 ### How to run the server
 **Note**: Ensure your laptop has Python and Pip, check by using the following commands:
-    - python3 --version 
-    - python3 -m pip --version
-    *These command is different in Windows, check https://packaging.python.org/en/latest/tutorials/installing-packages/*
+```python3 --version ```
+```python3 -m pip --version```
+*These command is different in Windows, check https://packaging.python.org/en/latest/tutorials/installing-packages/*
 
 ### STEPS
 - Step 1: Navigate to the directory - "database" folder.
@@ -35,7 +35,7 @@
 - Step 3 and 4 just have to be executed once when *you run the server for the first time on your laptop*. You can skip step 3,4 after that and it should be working, even when you terminate the server. To run it again, just use step 6.
 - To terminate the server: CTRL+C
 
-## Database structure {#structure}
+## Database structure
 - **"avatars"** table:
     - avatar_id (number -- auto incremented // PK)
     - name (text)
@@ -84,7 +84,7 @@
 ##### getAll(target)
 - This function gets all data from a table
 **PARAMS**
-- **target** is the table name (table name can be found at [Database structure](#structure))
+- **target** is the table name (table name can be found at [Database structure](#database-structure))
     - Example: ```getAll("users")```
 
 ##### getByID(target, id)
@@ -97,18 +97,18 @@
 - This function adds a new entity to the database (like create a new user, new task,...)
 **PARAMS**
 - **target** is the table name
-- **data** is the JSON object that matches the requested structure in a table (See [Example model](#model))
+- **data** is the JSON object that matches the requested structure in a table (See [Example model](#example-model))
 
 ##### update(target, id, data)
 - This functions updates an item (that has the provided id) with the given data 
 **PARAMS**
 - **target** is the table name
 - **id** is the id of the item that you want to update
-- **data** is the JSON object that matches the requested structure in a table (See [Example model](#model))
+- **data** is the JSON object that matches the requested structure in a table (See [Example model](#example-model))
     - **Note**: any field that you want to update, use your value, otherwise, keep the original value
     - Spread syntax can be used easily for this functionality
 
-## Example model {#model}
+## Example model
 - Data model for **"avatars" table**
 ```
 {
