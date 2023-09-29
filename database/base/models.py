@@ -26,7 +26,7 @@ class Room(models.Model):
 class Task(models.Model):
     task_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    desciption = models.CharField(max_length=500)
+    description = models.CharField(max_length=500)
     coins = models.PositiveIntegerField()
     due_date = models.DateTimeField()
     frequency =  models.PositiveIntegerField()
@@ -36,11 +36,11 @@ class Task(models.Model):
 
 class Notice(models.Model):
     notice_id = models.AutoField(primary_key=True)
-    desciption = models.CharField(max_length=500)
+    description = models.CharField(max_length=500)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Priority(models.Model):
     prio_id = models.AutoField(primary_key=True)
-    desciption = models.CharField(max_length=500)
+    description = models.CharField(max_length=500)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
