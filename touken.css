@@ -78,6 +78,19 @@ h2 {
 }
 
 
+#success {
+    width: 100%;
+    display: block;
+    background-color: #41EAD4;
+    
+}
+
+#error-pop{
+    width: 100%;
+    display: block;
+    background-color: #931621;
+}
+
 .image {
     display: block;
     width: 100%;
