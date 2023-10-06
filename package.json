@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "name": "touken",
+  "description": "- The server for the API is in the **database** folder.\r ### How to run the server\r **Note**: Ensure your laptop has Python and Pip, check by using the following commands:\r ```python3 --version ```\r ```python3 -m pip --version```\r *These command is different in Windows, check https://packaging.python.org/en/latest/tutorials/installing-packages/*",
+  "version": "1.0.0",
+  "main": "test.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgswolo/Touken.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgswolo/Touken/issues"
+  },
+  "homepage": "https://github.com/georgswolo/Touken#readme"
+}

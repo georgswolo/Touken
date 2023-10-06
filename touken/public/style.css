@@ -1,0 +1,211 @@
+
+:root {
+    --purpleColorLighter: #e2c4f3;
+    --blueColorLighter: #8fb3e2;
+    --blueColorDarker: #8e2de8;
+    --bgColor: #1a173b;
+    --fgColor: #e296e9;
+    --fgColorLighter: rgba(161, 39, 120, 0.5);
+    --headerTextColor: #ffffff;
+  }
+
+/* Main Container and Restyle HTML Tags */
+* {
+    background-color: var(--bgColor);
+    padding: 0;
+    margin: 0;
+  }
+  
+  main {
+    padding-bottom: 2rem;
+    margin-left: 2.5%;
+    margin-right: 5%;
+  }
+  
+  /* Fonts */
+  h4,
+  button,
+  span,
+  p,
+  a:not(.header-icon-link) {
+    font-family:sans-serif;
+  }
+  
+  h2,
+  h3,
+  input {
+    font-family:sans-serif;
+  }
+  
+  h4 {
+    color: var(--fgColor);
+    height: 100%;
+  }
+  
+  p {
+    padding-top: 0.5rem;
+    color: var(--fgColorLighter);
+    font-size: smaller;
+  }
+  
+  /* End Main Container and Default Tags */
+  
+  /* Start Header Styles */
+  .page-header {
+    background-image: linear-gradient(var(--purpleColorLighter), var(--blueColorDarker));
+    width: 100%;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--headerTextColor);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .page-header * {
+    background-color: transparent;
+  }
+  
+  .header-app-description {
+    margin-right: 2.5%;
+    font-size: smaller;
+  }
+  
+  .page-header h2 {
+    padding-left: 3%;
+  }
+  
+  .page-header a {
+    color: var(--headerTextColor);
+  }
+  
+  .header-logo {
+    display: flex;
+    align-items: center;
+    padding-left: 2.5%;
+  }
+  
+  /* End Header Styles */
+  
+  /* Footer Information */
+  .page-footer {
+    background-color: var(--purpleColorLighter);
+    position: fixed;
+    bottom: 0px;
+    height: 0.75rem;
+    width: 100%;
+  }
+  
+  /* Start Components Styles */
+  
+  /* Additonal Style for Page Titles */
+  .title {
+    color: var(--fgColor);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  
+  h3 {
+    color: var(--fgColor);
+  }
+  
+  /* Start Card Styles */
+  
+  .task {
+    margin-left: 2.5%;
+    border-color: #e296e9;
+    padding-right: 0%;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+  
+  .taskList {
+    justify-content: space-between;
+    border-color: var(--fgColor);
+    padding-right: 0%;
+    margin-bottom: 1rem;
+  }
+  
+  .create-card {
+    justify-content: center;
+    border-color: var(--fgColorLighter);
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .task,
+  .create-card {
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-bottom-width: thick;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .edit-card {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  
+  /* End Card Styles */
+  
+  /* Start Button and Form Styles */
+  .button-group-container {
+    margin-right: 2.5%;
+    display: flex;
+    align-items: stretch;
+  }
+  
+  /* Styling for input form control */
+  input {
+    font-size: larger;
+    color: var(--fgColor);
+    background-color: var(--fgColorLighter);
+    border-style: none;
+    border-radius: 0.5rem;
+    flex-grow: 1;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin: 0.75rem 2.5% 0.75rem 2.5%;
+  }
+  
+  a,
+  button {
+    text-decoration: none;
+    color: var(--fgColor);
+  }
+  
+  button, 
+  a:not(.header-icon-link)
+   {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    border-width: thin;
+    border-style: solid;
+    padding: 0.35rem 0.7rem 0.35rem 0.7rem;
+    text-decoration: none;
+    font-size: medium;
+  }
+  
+  a:not(.header-icon-link):hover,
+  button:hover {
+    background-color: var(--purpleColorLighter);
+    color: var(--bgColor);
+    border-style: solid;
+  }
+  
+  .shared {
+    color: var(--fgColorLighter);
+  }
+  
+  a:not(.shared, .header-icon-link),
+  button {
+    border-color: var(--fgColor);
+  }
+  
+  .bright-button {
+    background-color: var(--fgColor);
+    color: var(--bgColor);
+  }
+  
