@@ -7,13 +7,9 @@ export default function Header() {
     
     return (
         <header class="page-header">
-        <div class="header-logo">
-            <h2>
-                <a href="/" class="header-icon-link">Touken</a>
-            </h2>
-        </div>
-        <div class="header-app-description">
-            <span>organise your share houses</span>
+        <div>
+        <h2>Welcome back, User!</h2>
+        <h3>Points: [number here]</h3>
         </div>
     </header>
     )
