@@ -61,6 +61,7 @@ h2 {
     overflow-y: auto;
     margin-top: 3%;
     padding-top: 5%;
+    font-family: 'Urbanist', sans-serif;
 }
 
 #section-white {
@@ -71,10 +72,21 @@ h2 {
     max-height: 40vh;
     width: 100%;
     overflow-y: auto;
+    font-family: 'Urbanist', sans-serif;
+    margin-top: 5%;
 }
 
 #section-pink {
     background-color:#db43a3;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 36vh;
+    width: 100%;
+    overflow-y: auto;
+    padding-top: 5%;
+    font-family: 'Urbanist', sans-serif;
 }
 
 #section-blue h3, h4 {
@@ -87,25 +99,6 @@ h2 {
 
 #section-white a {
     color: #faf0f8;
-}
-
-#text-white{}
-
-#text-pink{}
-
-#text-blue {}
-
-
-.pop-up {
-
-}
-
-#notice-pop-up {
-
-}
-
-#task-pop-up {
-
 }
 
 
@@ -206,10 +199,15 @@ nav ul li a span {
 /*Top Page Navigation*/
 
 #top-nav {
-    background-color: #37388a;
+    background-color: #252670;
     top: 0;
     padding:5%;
-    margin-bottom: 5%;
+    font-family: 'Urbanist', sans-serif;
+    color: #fdc5f5;
+}
+
+#top-nav h3 {
+    padding-top: 2%;
 }
 
 
@@ -271,6 +269,8 @@ nav ul li a span {
     margin-bottom: 5%;
     margin-left: 5%;
     margin-right: 5%;
+    display: flex;
+    align-items: center;
 }
 
 #update-container {
@@ -290,6 +290,8 @@ nav ul li a span {
     height: 60px;
     width:  100%;
     margin-top: 1%;
+    display: flex;
+    align-items: center;
 }
 
 #house-update h4 {
