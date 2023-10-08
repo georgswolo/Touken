@@ -35,229 +35,31 @@ font-family: 'Ubuntu', sans-serif;
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #201068;
 }
 
-/*Title Heading*/
+/*Title Styling*/
 h1 {
     font-family: 'Titan One', cursive;
-    color: #fdc5f5;
+    background-color: transparent;
+    color: #ffffff;
+    margin: 1%;
     text-shadow: 5px 5px#DB5ABA;
     -webkit-text-stroke: #DB5ABA 1px;
 }
 
 h2 {
+  background-color: transparent;
     font-family: 'Titan One', cursive;
     color: #faf0f8;
     text-shadow: 5px 5px#DB5ABA;
     -webkit-text-stroke: #DB5ABA 1px;
 }
 
-
-
-.container {
-    position: relative;
-    width: 50%;
+h3 {
+  color:#26175e;
 }
 
-
-
-#section-blue {
-    background-color: #3e3f92;
-    border-radius: 20px 20px 0px 0px;
-}
-
-#section-white {
-    background-color: white;
-}
-
-#section-pink {
-    background-color:#db43a3;
-
-}
-
-
-.pop-up {
-
-}
-
-#notice-pop-up {
-
-}
-
-#task-pop-up {
-
-}
-
-
-#success {
-    width: 100%;
-    display: block;
-    background-color: #41EAD4;
-    
-}
-
-#error-pop{
-    width: 100%;
-    display: block;
-    background-color: #931621;
-}
-
-.image {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #db43a3;
-    overflow: hidden;
-    width: 0;
-    height: 100%;
-    transition: .5s ease;
-}
-
-.container:hover .overlay {
-    width: 100%;
-}
-
-.text {
-    white-space: nowrap;
-    font-family: 'Barbie', sans-serif;
-    color: rgb(236, 200, 237);
-    background-color: #db43a3;
-    font-size: 50px;
-    position: absolute;
-    overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-}
-
-
-/*Navigation bar + components*/
-.nav {
-    background-color: #fdc5f5;
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    margin:0;
-    left:0;
-    display: flex;
-    
-}
-
-
-/*Nav links styling*/
-
-.nav, .ul {
-    display: flex;
-    list-style: none;
-    width: 100%;
-    
-}
-
-.nav, .ul, .li {
-    position: relative;
-    width: 100%;
-    
-}
-
-.nav, .ul, .li, .a { 
-    position: relative;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    color: #dca0d3;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    
-}
-
-.nav, .a:hover {
-    background-color: #DB5ABA;
-    color: #ffffff;
-    border-radius: 15px;
-}
-
-nav ul li a span {
-    position: relative;
-    display: block;
-
-}
-
-.material-symbols-outlined {
-    font-size: 4em !important;
-}
-
-/*Top Page Navigation*/
-
-.top-nav {
-    background-color: #df9ab4;
-    top: 0;
-}
-
-
-/*Bottom Page Navigation*/
-#bot-nav {
-    height: 10%;
-    background-color: #fdc5f5;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-    
-    
-}
-
-
-/*Landing Page*/
-#landing {
-    background-color: #6b74bb;  
-}
-
-#brand {
-    text-align: center;
-    font-size: 90px;
-    margin-top: 90%;
-    margin-bottom: 0%;
-    
-}
-
-#enter-text {
-    text-align: center;
-    font-family: 'Paytone One', sans-serif;
-    color: #26175e;
-    margin-bottom: 50%;
-}
-
-/*Home Page*/
-
-/*Task Page*/
-
-
-/*User Profile*/
-
-
-/* Main Container and Restyle HTML Tags */
-* {
-    background-color: var(--bgColor);
-    padding: 0;
-    margin: 0;
-  }
-  
-  main {
-    padding-bottom: 2rem;
-    margin-left: 2.5%;
-    margin-right: 5%;
-  }
-  
-  /* Fonts */
   h4,
   button,
   span,
@@ -266,16 +68,23 @@ nav ul li a span {
     font-family:sans-serif;
   }
   
-  /* End Main Container and Default Tags */
   
-  /* Start Header Styles */
+  main {
+    padding-bottom: 2rem;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    height: 100%;
+  }
+
+
+  
+  /* Header */
   .page-header {
     background-color:#dca0d3;
     width: 100%;
     position: sticky;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto;
     color: var(--headerTextColor);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -285,118 +94,76 @@ nav ul li a span {
     background-color: transparent;
   }
   
-  .header-app-description {
-    margin-right: 2.5%;
-    font-size: smaller;
-  }
-  
   .page-header h2 {
     padding-left: 3%;
-  }
-  
-  .page-header a {
-    color: var(--headerTextColor);
-  }
-  
-  .header-logo {
     display: flex;
-    align-items: center;
-    padding-left: 2.5%;
   }
   
-  /* End Header Styles */
+  .page-header h3 {
+    color: var(--headerTextColor);
+    display: flex;
+    justify-content:space-evenly;
+  }
   
-  /* Footer Information */
+  /* Footer */
   .page-footer {
     background-color: #dca0d3;
-    position: fixed;
-    bottom: 5%;
-    height: 0.75rem;
+    position: absolute;
+    bottom: 0%;
+    height: 5%;
     width: 100%;
+    justify-content: space-evenly;
   }
   
-  /* Start Components Styles */
   
-  /* Additonal Style for Page Titles */
-  .title {
-    color: var(--fgColor);
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+
+  /* styling for the title font of tasks in card */
+  .task-title {
+    background-color: transparent;
+    font-family: 'Titan One', cursive;
+    text-size-adjust: 10%;
+    font-size: x-large;
+    color: #201068;
+    margin: 1%;
   }
   
-  h3 {
-    color:#26175e;
-  }
-  
-  /* Start Card Styles */
-  
+  /* card for a task */
   .task {
-    margin-left: 2.5%;
-    border-color: #e296e9;
-    padding-right: 0%;
+    margin: 2.5%;
+    border-color: #DB5ABA;
+    background-color:#ebbef1;
+    justify-content:space-evenly;
+    display: flex;
+    padding: 1%;
+    width: 100%;
     margin-bottom: 1rem;
-    align-items: center;
   }
   
+  /* holds the list of all the tasks assigned to the user */
   .taskList {
     justify-content: space-between;
     border-color: var(--fgColor);
     padding-right: 0%;
+    background-color: transparent;
     margin-bottom: 1rem;
   }
   
-  .create-card {
-    justify-content: center;
-    border-color: var(--fgColorLighter);
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  
-  .task,
-  .create-card {
-    display: flex;
-    align-items: center;
-    border-style: solid;
-    border-bottom-width: thick;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  
-  .edit-card {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-  }
-  
-  /* End Card Styles */
   
   /* Start Button and Form Styles */
   .button-group-container {
     width: 100%;
+    margin: 5%;
     background-color:#dca0d3;
     display: flex;
-    align-items: stretch;
+    justify-content: space-evenly;
   }
   
-  /* Styling for input form control */
-  input {
-    font-size: larger;
-    color: var(--fgColor);
-    background-color: var(--fgColorLighter);
-    border-style: none;
-    border-radius: 0.5rem;
-    flex-grow: 1;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    margin: 0.75rem 2.5% 0.75rem 2.5%;
-  }
-
-  .footer-button {
-    background-color:#dca0d3;
-  }
-  
+  /* button class and status for marking a task as complete */
   a,
   button {
     text-decoration: none;
     color: var(--fgColor);
+    justify-content: end;
   }
   
   button, 
@@ -411,21 +178,19 @@ nav ul li a span {
     font-size: medium;
   }
   
-  a:not(.header-icon-link):hover,
+  a:hover,
   button:hover {
     background-color: var(--purpleColorLighter);
     color: var(--bgColor);
     border-style: solid;
   }
   
-  .shared {
-    color: var(--fgColorLighter);
+  a.task-complete {
+    background-color: #db43a3;
+    color: #1a173b;
   }
-  
-  a:not(.shared, .header-icon-link),
-  button {
-    border-color: var(--fgColor);
-  }
+
+  /* other button - not super sure why it is here lol */
   
   .bright-button {
     background-color: var(--fgColor);
