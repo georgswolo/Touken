@@ -1,0 +1,199 @@
+
+:root {
+    --purpleColorLighter: #e2c4f3;
+    --blueColorLighter: #8fb3e2;
+    --blueColorDarker: #8e2de8;
+    --bgColor: #1a173b;
+    --fgColor: #e296e9;
+    --fgColorLighter: rgba(161, 39, 120, 0.5);
+    --headerTextColor: #ffffff;
+  }
+
+  @import url('https://fonts.cdnfonts.com/css/barbie');
+/*
+colors used:
+light white: #fbe8ff
+barbie pink: DB5ABA
+blue-black: 0D1321
+navy: 21296C
+turquoiuse for accepted tasks: 41EAD4
+red error color: 931621
+more blues:
+- 59A5D8 - sky blue
+- 4b88a2 - tealy 
+
+
+
+FONTS
+font-family: 'Chewy', cursive;
+font-family: 'Paytone One', sans-serif;
+font-family: 'Shadows Into Light', cursive;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #201068;
+}
+
+/*Title Styling*/
+h1 {
+    font-family: 'Titan One', cursive;
+    background-color: transparent;
+    color: #ffffff;
+    margin: 1%;
+    text-shadow: 5px 5px#DB5ABA;
+    -webkit-text-stroke: #DB5ABA 1px;
+}
+
+h2 {
+  background-color: transparent;
+    font-family: 'Titan One', cursive;
+    color: #faf0f8;
+    text-shadow: 5px 5px#DB5ABA;
+    -webkit-text-stroke: #DB5ABA 1px;
+}
+
+h3 {
+  color:#26175e;
+}
+
+  h4,
+  button,
+  span,
+  p,
+  a:not(.header-icon-link) {
+    font-family:sans-serif;
+  }
+  
+  
+  main {
+    padding-bottom: 2rem;
+    margin-left: 2.5%;
+    margin-right: 5%;
+    height: 100%;
+  }
+
+
+  
+  /* Header */
+  .page-header {
+    background-color:#dca0d3;
+    width: 100%;
+    position: sticky;
+    display: grid;
+    grid-template-columns: auto;
+    color: var(--headerTextColor);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .page-header * {
+    background-color: transparent;
+  }
+  
+  .page-header h2 {
+    padding-left: 3%;
+    display: flex;
+  }
+  
+  .page-header h3 {
+    color: var(--headerTextColor);
+    display: flex;
+    justify-content:space-evenly;
+  }
+  
+  /* Footer */
+  .page-footer {
+    background-color: #dca0d3;
+    position: absolute;
+    bottom: 0%;
+    height: 5%;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  
+  
+
+  /* styling for the title font of tasks in card */
+  .task-title {
+    background-color: transparent;
+    font-family: 'Titan One', cursive;
+    text-size-adjust: 10%;
+    font-size: x-large;
+    color: #201068;
+    margin: 1%;
+  }
+  
+  /* card for a task */
+  .task {
+    margin: 2.5%;
+    border-color: #DB5ABA;
+    background-color:#ebbef1;
+    justify-content:space-evenly;
+    display: flex;
+    padding: 1%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* holds the list of all the tasks assigned to the user */
+  .taskList {
+    justify-content: space-between;
+    border-color: var(--fgColor);
+    padding-right: 0%;
+    background-color: transparent;
+    margin-bottom: 1rem;
+  }
+  
+  
+  /* Start Button and Form Styles */
+  .button-group-container {
+    width: 100%;
+    margin: 5%;
+    background-color:#dca0d3;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  /* button class and status for marking a task as complete */
+  a,
+  button {
+    text-decoration: none;
+    color: var(--fgColor);
+    justify-content: end;
+  }
+  
+  button, 
+  a:not(.header-icon-link)
+   {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    border-width: thin;
+    border-style: solid;
+    padding: 0.35rem 0.7rem 0.35rem 0.7rem;
+    text-decoration: none;
+    font-size: medium;
+  }
+  
+  a:hover,
+  button:hover {
+    background-color: var(--purpleColorLighter);
+    color: var(--bgColor);
+    border-style: solid;
+  }
+  
+  a.task-complete {
+    background-color: #db43a3;
+    color: #1a173b;
+  }
+
+  /* other button - not super sure why it is here lol */
+  
+  .bright-button {
+    background-color: var(--fgColor);
+    color: var(--bgColor);
+  }
+  
