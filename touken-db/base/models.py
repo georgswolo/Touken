@@ -27,8 +27,8 @@ class Task(models.Model):
     task_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
-    coins = models.PositiveIntegerField()
-    frequency =  models.PositiveIntegerField()
+    coins = models.PositiveIntegerField() 
+    frequency =  models.PositiveIntegerField() #hour-based
 
 class TaskStatus(models.Model):
     status_id = models.AutoField(primary_key=True)
