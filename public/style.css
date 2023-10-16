@@ -35,7 +35,7 @@ font-family: 'Ubuntu', sans-serif;
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #201068;
+    background-color: #1c1f3d;
 }
 
 /*Title Styling*/
@@ -57,7 +57,9 @@ h2 {
 }
 
 h3 {
-  color:#26175e;
+  color:#f1abff;
+  font-size: x-large;
+  background-color: transparent;
 }
 
   h4,
@@ -107,15 +109,28 @@ h3 {
   
   /* Footer */
   .page-footer {
-    background-color: #dca0d3;
+    background-color:#dca0d3;
     position: absolute;
+    display: flex;
     bottom: 0%;
     height: 5%;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
-  
-  
+
+  a.footer-button {
+    background-color:#dca0d3;
+    color:#1c1f3d;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .footer-button.active {
+    background-color:#63365c;
+    color:#4b2a61;
+  }
 
   /* styling for the title font of tasks in card */
   .task-title {
@@ -196,4 +211,70 @@ h3 {
     background-color: var(--fgColor);
     color: var(--bgColor);
   }
+
+  .delete {
+    background-color: var(--fgColor);
+    color: var(--bgColor);
+    top: 0%;
+    justify-self:left;
+    display: inline-block;
+  }
+
+
+  .post {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    background-color: #aa5ff0;
+    bottom: 10%;
+  }
   
+  .board {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    padding: 2%;
+    background-color: #97468b;
+  }
+
+  .priority {
+    position: absolute;
+    justify-self: center;
+    width: 90%;
+    height: 40%;
+    padding: 2%;
+    background-color: #293055;
+    border: 5px solid #f1abff;
+  }
+
+  .messages {
+    position: static;
+    min-width: 25%;
+    display: inline-block;
+    justify-content: stretch;
+    background-color: #442d58;
+  }
+
+  .message {
+    display: block;
+    padding: 5%;
+    justify-content: center;
+    background-color: #daa2ff;
+    color:#26175e;
+  }
+
+  .toggle-button {
+    background-color: #e9a5e9;
+    justify-self: end;
+    display: inline;
+    color: rgb(68, 17, 126);
+    border: none;
+    padding: 2%;
+    font-size: small;
+    cursor: pointer;
+  }
+  
+  .toggle-button.active {
+    background-color: #ce7df3;
+  }
