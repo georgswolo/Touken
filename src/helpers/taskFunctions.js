@@ -1,4 +1,4 @@
-import { add, getAll, getByID } from "./apiFunctions";
+import { add, getAll, getByID, update } from "./apiFunctions";
 
 // Fetch unassigned tasks
 export async function fetchUnassignedTask() {
@@ -37,5 +37,9 @@ export async function fetchUnassignedTask() {
     return result;
 }
 
+export async function acceptTask(data) {
+    const response = await update("task-status", data.status_id, data)
+    console.log(response)
+}
 
 

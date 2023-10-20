@@ -57,7 +57,7 @@ def getTaskStatus(request):
     '''
     try: 
         id = request.query_params['id']
-        task = TaskStatus.objects.get(task_id = id)
+        task = TaskStatus.objects.get(status_id = id)
         serializer = TaskStatusSerializer(task)
     except:
         tasks = TaskStatus.objects.all()

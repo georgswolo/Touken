@@ -6,13 +6,13 @@ import App from "./pages/App";
 import Home from "./pages/Home";
 import Tasks from "./pages/Tasks";
 import Leaderboard from "./pages/Leaderboard";
-import TestTaskList from "./pages/TestTaskList";
+import TaskList from "./pages/TaskList";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<TestTaskList />} />
+                <Route path="/" element={<TaskList isUnassigned={true}/>} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/tasks" element={<Tasks />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />

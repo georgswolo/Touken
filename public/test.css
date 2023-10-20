@@ -44,15 +44,31 @@ body {
     background-color: var(--darkPink);
     padding: 1% 5% 1% 5%;
     margin: var(--margin);
+    text-transform: capitalize;
 }
 
 .task-card .points {
     font-family: var(--font-game);
-    color: var(--lightPink)
+    color: var(--lightPink);
+    padding-right: var(--margin);
 }
 
 input, .task-card .points i {
     margin-right: 5px
 }
+
+.btn {
+    background-color: var(--green);
+    color: var(--textColor);
+    border: var(--beige) solid 2px;
+    padding: 5%;
+    border-radius: 10px;
+    font-family: var(--font-inika);
+}
+
+.unassigned-btn {
+    display: flex;
+    justify-content: space-between;
+} 
 
 

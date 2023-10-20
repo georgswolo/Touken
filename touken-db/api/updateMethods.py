@@ -69,12 +69,13 @@ def updateTaskStatus(request):
     '''
     try: 
         id = request.query_params['id']
-        task = TaskStatus.objects.get(task_id = id)
+        print(id)
+        task = TaskStatus.objects.get(status_id = id)
+        print(task)
         serializer = TaskStatusSerializer(task, data = request.data)
         if serializer.is_valid():
             serializer.save()
-        return Response(serializer.data)
-
+            return Response(serializer.data)
     except:
         return Response(None)
 
