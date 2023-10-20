@@ -1,8 +1,8 @@
 import Template from "../components/Template";
 
-export default function Leaderboard() {
+export default function MessageBoard() {
     return (
-        <Template title="Leaderboard">
+        <Template title="Notices">
             Content is coming...
         </Template>
     )

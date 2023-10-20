@@ -2,20 +2,22 @@ import React from "react";
 import {useState} from 'react';
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./pages/App";
 import Home from "./pages/Home";
-import Tasks from "./pages/Tasks";
+import MessageBoard from "./pages/MessageBoard";
+import Game from "./pages/Game";
 import Leaderboard from "./pages/Leaderboard";
-import TaskList from "./pages/TaskList";
+import Profile from "./pages/Profile";
+
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<TaskList isUnassigned={true}/>} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/tasks" element={<Tasks />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/notice" element={<MessageBoard />} />
+                <Route path="/game" element={<Game />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

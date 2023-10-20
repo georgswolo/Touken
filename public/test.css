@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inika&family=Lemon&family=Monomaniac+One&display=swap');
 
 :root {
-    --darkBlue: #1A3453;
+    --darkBlue: #2B425F;
     --darkPink: #D3629F;
     --lightPink: #FFCCF4;
     --beige: #EDE8E8;
@@ -16,6 +16,7 @@
     --margin: 3%
 }
 
+/* OVERALL WEBSITE STYLE */
 body {
     color: var(--textColor);
     background-color: var(--beige);
@@ -34,6 +35,8 @@ body {
     font-family: var(--font-lemon);
     margin:var(--margin)
 }
+
+/* HOME (TASK PAGE)/ UNASSIGNED TASK PAGE */
 
 .task-card {
     display: flex;
@@ -71,4 +74,52 @@ input, .task-card .points i {
     justify-content: space-between;
 } 
 
+/* HEADER STYLE */
+header {
+    background-color: var(--darkBlue);
+    height: 5vh;
+    font-family: var(--font-lemon);
+    font-size: 10vw;
+    text-align: center;
+    padding-top: var(--margin);
+    padding-bottom: 5%;
+    text-shadow: var(--darkPink) -3px 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 
+
+/* MAIN */
+main {
+    margin-top:  10vh;
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--lightPink);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer a {
+    flex: 1;
+    text-align: center;
+    padding: 3vw;
+}
+
+.icon {
+    font-size: 7vw;
+    color: var(--darkBlue);
+}
+
+.active {
+    background-color: var(--darkPink);
+}

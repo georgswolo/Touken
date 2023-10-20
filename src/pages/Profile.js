@@ -1,8 +1,8 @@
 import Template from "../components/Template";
 
-export default function Leaderboard() {
+export default function Profile() {
     return (
-        <Template title="Leaderboard">
+        <Template title="Profile">
             Content is coming...
         </Template>
     )

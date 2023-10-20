@@ -1,79 +1,15 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inika&family=Lemon&family=Monomaniac+One&display=swap');
-
 :root {
-    --darkBlue: #1A3453;
-    --darkPink: #D3629F;
-    --lightPink: #FFCCF4;
-    --beige: #EDE8E8;
-    --green: #31A69F;
-    --magenta: #9A1F69;
-    --mutedBlue: #386BA7;
-    --borderBeige: #F0F4FD;
-    --textColor: #FFFFFF;
-    --font-inika: 'Inika', serif;
-    --font-lemon: 'Lemon', serif;
-    --font-game: 'Monomaniac One', sans-serif;
-    --margin: 3%
-}
+    --purpleColorLighter: #e2c4f3;
+    --blueColorLighter: #8fb3e2;
+    --blueColorDarker: #8e2de8;
+    --bgColor: #1A3453;
+    --fgColor: #e296e9;
+    --fgColorLighter: rgba(161, 39, 120, 0.5);
+    --headerTextColor: #ffffff;
+  }
 
-body {
-    color: var(--textColor);
-    background-color: var(--beige);
-    font-family: var(--font-inika);
-
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.container-header {
-    font-size: 5vw;
-    color: var(--darkBlue);
-    font-family: var(--font-lemon);
-    margin:var(--margin)
-}
-
-.task-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: var(--darkBlue) solid 4px;
-    border-radius: 30px;
-    background-color: var(--darkPink);
-    padding: 1% 5% 1% 5%;
-    margin: var(--margin);
-    text-transform: capitalize;
-}
-
-.task-card .points {
-    font-family: var(--font-game);
-    color: var(--lightPink);
-    padding-right: var(--margin);
-}
-
-input, .task-card .points i {
-    margin-right: 5px
-}
-
-.btn {
-    background-color: var(--green);
-    color: var(--textColor);
-    border: var(--beige) solid 2px;
-    padding: 5%;
-    border-radius: 10px;
-    font-family: var(--font-inika);
-}
-
-.unassigned-btn {
-    display: flex;
-    justify-content: space-between;
-} 
-
-
-
+  @import url('https://fonts.cdnfonts.com/css/barbie');
 /*
 colors used:
 light white: #fbe8ff

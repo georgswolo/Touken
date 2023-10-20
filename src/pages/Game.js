@@ -1,8 +1,8 @@
 import Template from "../components/Template";
 
-export default function Leaderboard() {
+export default function Game() {
     return (
-        <Template title="Leaderboard">
+        <Template title="Game">
             Content is coming...
         </Template>
     )
