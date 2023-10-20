@@ -34,7 +34,7 @@ export default function MessageBoard() {
             }
             else {
                 colours = ['#daa2ff'];
-                isPriority = null;
+                isPriority = 'NOTICE';
             }
             const newitem = {
                 id: uuidv4(),

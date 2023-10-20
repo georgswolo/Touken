@@ -144,15 +144,15 @@ footer a {
 }
 
 
-
 .bright-button {
     background-color: var(--fgColor);
     color: var(--bgColor);
   }
 
+
   .delete {
     background-color: transparent;
-    color: var(--bgColor);
+    color: var(--darkBlue);
     font-weight: bolder;
     top: 0%;
     border: none;
@@ -198,7 +198,7 @@ footer a {
   }
 
   .messages .title{
-    color:crimson;
+    color:rgb(0, 0, 0);
     font-size: medium;
     font-weight: bold;
     padding: 4px;
