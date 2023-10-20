@@ -143,3 +143,90 @@ footer a {
     background-color: var(--darkPink);
 }
 
+
+
+.bright-button {
+    background-color: var(--fgColor);
+    color: var(--bgColor);
+  }
+
+  .delete {
+    background-color: transparent;
+    color: var(--bgColor);
+    font-weight: bolder;
+    top: 0%;
+    border: none;
+    justify-self:left;
+    display: inline-block;
+  }
+
+
+  .post {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 50vh;
+    bottom: 10vh;
+    left: 5vh;
+    background-color: transparent;
+  }
+  
+  .board {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    padding: 2%;
+    background-color: #97468b;
+  }
+
+  .priority {
+    position: absolute;
+    justify-self: center;
+    width: 90%;
+    height: 40%;
+    padding: 2%;
+    background-color: #b52052;
+  }
+
+  .messages {
+    position: fixed;
+    min-width: 25px;
+    display: inline-block;
+    justify-content: stretch;
+    color: whitesmoke;
+    background-color: #f2dbee;
+  }
+
+  .messages .title{
+    color:crimson;
+    font-size: medium;
+    font-weight: bold;
+    padding: 4px;
+    justify-self: center;
+    display: inline-block;
+    background-color: transparent;
+  }
+
+  .message {
+    display: block;
+    padding: 8px;
+    justify-content: center;
+    background-color: #f5eff9;
+    color:#26175e;
+  }
+
+  .toggle-button {
+    background-color: #e9a5e9;
+    justify-self: end;
+    display: inline;
+    color: rgb(68, 17, 126);
+    border: none;
+    padding: 2%;
+    font-size: small;
+    cursor: pointer;
+  }
+  
+  .toggle-button.active {
+    background-color: crimson;
+    color:#faf0f8;
+  }
