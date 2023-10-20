@@ -1,6 +1,6 @@
-export default function Button({text, handleBtnClick}) {
+export default function Button({accept, text, handleBtnClick}) {
     return (
-        <button className="btn" onClick={handleBtnClick}>
+        <button className={`btn ${accept ? 'accept' : 'reject'}`} onClick={handleBtnClick}>
             {text}
         </button>
     )

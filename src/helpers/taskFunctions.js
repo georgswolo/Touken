@@ -37,9 +37,24 @@ export async function fetchUnassignedTask() {
     return result;
 }
 
-export async function acceptTask(data) {
+export async function updateTaskStatus(data) {
     const response = await update("task-status", data.status_id, data)
     console.log(response)
 }
 
+export async function fetchAssignedTask(user_id) {
+    const tasks = await getAll("task-status");
+    
+    // get all unassigned task
+    const assignedTasks = tasks.filter(task => task.user_id != null)
+
+    const result = await Promise.all(assignedTasks.map(async task => {
+        const task_detail = await getByID("tasks", task.task_id)
+        return {
+            ...task, ...task_detail
+        }
+    }))
+    
+    return result;
+}
 

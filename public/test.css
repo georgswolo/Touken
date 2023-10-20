@@ -18,7 +18,7 @@
 
 /* OVERALL WEBSITE STYLE */
 body {
-    color: var(--textColor);
+    color: var(--darkBlue);
     background-color: var(--beige);
     font-family: var(--font-inika);
 
@@ -36,9 +36,14 @@ body {
     margin:var(--margin)
 }
 
+.general-btn {
+    text-align: center;
+}
+
 /* HOME (TASK PAGE)/ UNASSIGNED TASK PAGE */
 
 .task-card {
+    color: var(--textColor);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,18 +66,31 @@ input, .task-card .points i {
 }
 
 .btn {
-    background-color: var(--green);
     color: var(--textColor);
+    background-color: var(--mutedBlue);
     border: var(--beige) solid 2px;
     padding: 5%;
     border-radius: 10px;
     font-family: var(--font-inika);
 }
 
-.unassigned-btn {
+
+.btn.accept {
+    background-color: var(--green);
+}
+
+.btn.reject {
+    background-color: crimson;
+}
+
+.task-btn {
     display: flex;
     justify-content: space-between;
 } 
+
+.crossed {
+    text-decoration: line-through;
+}
 
 /* HEADER STYLE */
 header {
@@ -88,6 +106,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    color: var(--textColor)
 }
 
 
@@ -123,3 +142,4 @@ footer a {
 .active {
     background-color: var(--darkPink);
 }
+

@@ -7,6 +7,7 @@ import MessageBoard from "./pages/MessageBoard";
 import Game from "./pages/Game";
 import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
+import Pendings from "./pages/Pendings";
 
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
                 <Route path="/game" element={<Game />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/pendings" element={<Pendings />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,
