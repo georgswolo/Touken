@@ -92,6 +92,15 @@ input, .task-card .points i {
     text-decoration: line-through;
 }
 
+/* TASK DETAILS */
+.popup {
+    display: none;
+}
+
+.popup.active {
+    display: block;
+}
+
 /* HEADER STYLE */
 header {
     background-color: var(--darkBlue);

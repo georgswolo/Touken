@@ -27,13 +27,10 @@ export default function Footer() {
         }
     }
 
-    console.log(active_btn())
-
-    
     return (
-        <footer class="page-footer">
-            {buttons.map((button) => (
-                <FooterIcon button={button} isActive={active_btn() == button.id} />
+        <footer className="page-footer">
+            {buttons.map((button, idx) => (
+                <FooterIcon key={idx} button={button} isActive={active_btn() == button.id} />
             ))}
         </footer>
     )
@@ -41,8 +38,8 @@ export default function Footer() {
 
 function FooterIcon({button, isActive}) {
     return (
-        <a key={button.id} href={button.link} className={`footer-button ${isActive ? 'active' : ''}`}>
+        <Link key={button.id} to={button.link} className={`footer-button ${isActive ? 'active' : ''}`}>
             <FontAwesomeIcon icon={button.icon} className="icon" />
-        </a>
+        </Link>
     )
 }
