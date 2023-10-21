@@ -70,6 +70,11 @@ export default function TaskList({isUnassigned}) {
         setTasks([...result, {..._task, popup: !_task.popup}])
     }
 
+    const handleCloseBtn = (_task) => {
+        let result = tasks.filter(task => task.status_id != _task.status_id)
+        setTasks([...result, {..._task, popup: !_task.popup}])
+    }
+
 
     return (
         <>  
@@ -89,8 +94,9 @@ export default function TaskList({isUnassigned}) {
                                 handleBtnClick={() => isUnassigned ? handleBtnClick(task, true) : handleBtnClick(task, false)}
                                 handlePopup={() => handlePopup(task)}
                             />
+                            <section className={`popup-wrapper ${task.popup ? "active" : ""}`}></section>
                             <section className={`popup ${task.popup ? "active" : ""}`}>
-                                <TaskDetail task={task}/>
+                                <TaskDetail task={task} handleCloseBtn={() => handleCloseBtn(task)}/>
                             </section>
                         </>
                         

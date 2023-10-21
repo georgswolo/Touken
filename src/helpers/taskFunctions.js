@@ -14,6 +14,7 @@ export async function fetchUnassignedTask() {
         const task_detail = await getByID("tasks", task.task_id)
         const now = new Date()
         const startTime = Date.parse(task.start_date)
+        console.log(now.toISOString())
         if (now.getTime() - startTime >= task_detail.frequency * 3600000) {
             // create a new task
             const new_task = {
@@ -22,8 +23,11 @@ export async function fetchUnassignedTask() {
                 completed: false,
                 user_id: null
             }
-            unassignedTasks.push(new_task)
-            add("task-status", JSON.stringify(new_task))
+            delete new_task.status_id
+            console.log(new_task)
+            // const response = await add("task-status", new_task)
+            // unassignedTasks.push(response)
+            // console.log(response)
         }
     });
 
