@@ -1,4 +1,4 @@
-import { add, getAll, getByID, update } from "./apiFunctions";
+import { add, deleteItem, getAll, getByID, update } from "./apiFunctions";
 
 // Fetch unassigned tasks
 export async function fetchUnassignedTask() {
@@ -10,12 +10,13 @@ export async function fetchUnassignedTask() {
     // get all the completed task and see if any needs to be done next
     const completedTasks = tasks.filter(task => task.completed)
 
-    completedTasks.forEach( async task => {
+    const newTasks= await Promise.all(completedTasks.map( async task => {
         const task_detail = await getByID("tasks", task.task_id)
         const now = new Date()
         const startTime = Date.parse(task.start_date)
-        console.log(now.toISOString())
+
         if (now.getTime() - startTime >= task_detail.frequency * 3600000) {
+            await deleteItem("task-status", task.status_id)
             // create a new task
             const new_task = {
                 ...task,
@@ -24,26 +25,30 @@ export async function fetchUnassignedTask() {
                 user_id: null
             }
             delete new_task.status_id
+            // delete the old task
             console.log(new_task)
-            // const response = await add("task-status", new_task)
-            // unassignedTasks.push(response)
+            const response = await add("task-status", new_task)
+            return response
             // console.log(response)
         }
-    });
+    }));
 
-    const result = await Promise.all(unassignedTasks.map(async task => {
+    console.log("new task", newTasks)
+    const result = await Promise.all([...unassignedTasks, ...newTasks]
+        .filter(task => task != undefined)
+        .map(async task => {
         const task_detail = await getByID("tasks", task.task_id)
         return {
             ...task, ...task_detail
         }
     }))
-    
+    console.log(result)
     return result;
 }
 
 export async function updateTaskStatus(data) {
     const response = await update("task-status", data.status_id, data)
-    console.log(response)
+    // console.log(response)
 }
 
 export async function fetchAssignedTask(user_id) {
@@ -60,5 +65,10 @@ export async function fetchAssignedTask(user_id) {
     }))
     
     return result;
+}
+
+export async function updateUserCoins(data) {
+    const response = await update("users", data.user_id, data)
+    // console.log(response)
 }
 

@@ -31,7 +31,7 @@ body {
 
 /* MAIN */
 main {
-    margin-top:  10vh;
+    margin-top:  9vh;
     margin-bottom: 10vh;
 }
 
@@ -39,7 +39,8 @@ main {
     font-size: 5vw;
     color: var(--darkBlue);
     font-family: var(--font-lemon);
-    margin:var(--margin)
+    margin: var(--margin);
+    padding-top: 2%;
 }
 
 .general-btn {
@@ -305,3 +306,38 @@ footer a {
     background-color: crimson;
     color:#faf0f8;
   }
+
+/* PROFILE */
+.profile-pic.big {
+    width: 25vw;
+    height: 25vw;
+    border: var(--beige) solid 5px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.profile-head {
+    background-color: var(--darkPink);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: var(--textColor);
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+}
+
+.profile-head > section {
+    padding-top: 2%;
+    font-family: var(--font-lemon);
+}
+
+.profile-details {
+    display: flex;
+    width: 20%;
+    margin: auto;
+    font-size: 6vw;
+    justify-content: space-around;
+    padding-top: 2%;
+    color: var(--lightPink);
+    font-family: var(--font-game);
+    align-items: center;
+}

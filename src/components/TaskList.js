@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { acceptTask, fetchAssignedTask, fetchUnassignedTask, updateTaskStatus } from "../helpers/taskFunctions";
+import { acceptTask, fetchAssignedTask, fetchUnassignedTask, updateTaskStatus, updateUserCoins } from "../helpers/taskFunctions";
 import Task from "./Task";
-import { update } from "../helpers/apiFunctions";
+import { getByID, update } from "../helpers/apiFunctions";
 import Button from "./Button";
 import { USER_ID } from "../pages/Home";
 import TaskDetail from "./TaskDetails";
@@ -62,6 +62,12 @@ export default function TaskList({isUnassigned}) {
             ..._task,
             completed: !_task.completed
         })
+
+        let user = await getByID("users", _task.user_id)
+        await updateUserCoins({
+            ...user,
+            coins: !_task.completed ? user.coins + _task.coins : user.coins - _task.coins
+        })
         setTasks([...result, {..._task, completed: !_task.completed}])
     }
 
@@ -84,7 +90,9 @@ export default function TaskList({isUnassigned}) {
             {
                 tasks.length == 0 ? 
                     <p>No tasks yet.</p> :
-                    tasks.sort(orderTask).map(task => (
+                    tasks.sort(orderTask)
+                        .filter(task => !task.completed)
+                        .map(task => (
                         <>
                             <Task 
                                 key={task.status_id} 
@@ -101,6 +109,37 @@ export default function TaskList({isUnassigned}) {
                         </>
                         
             ))}
+
+            { !isUnassigned &&
+                (<>
+                    <p className="container-header">
+                        Completed Tasks
+                    </p>
+                    {
+                        tasks.length == 0 ? 
+                            <p>No tasks yet.</p> :
+                            tasks.sort(orderTask)
+                                .filter(task => task.completed)
+                                .map(task => (
+                                <>
+                                    <Task 
+                                        key={task.status_id} 
+                                        task={task} 
+                                        handleCheck={() => handleCheck(task)} 
+                                        isUnassigned={isUnassigned}
+                                        handleBtnClick={() => isUnassigned ? handleBtnClick(task, true) : handleBtnClick(task, false)}
+                                        handlePopup={() => handlePopup(task)}
+                                    />
+                                    <section className={`popup-wrapper ${task.popup ? "active" : ""}`}></section>
+                                    <section className={`popup ${task.popup ? "active" : ""}`}>
+                                        <TaskDetail task={task} handleCloseBtn={() => handleCloseBtn(task)}/>
+                                    </section>
+                                </>
+                                
+                    ))} 
+                </>)
+            }
+
             <Link style={{display: "block", textAlign: "center"}} to="/pendings">
                 {!isUnassigned ? 
                     <button className="btn">
