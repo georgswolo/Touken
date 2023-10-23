@@ -20,6 +20,7 @@ ReactDOM.render(
                 <Route path="/game" element={<Game />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/profile/:id" element={<Profile />} />
                 <Route path="/pendings" element={<Pendings />} />
                 <Route path="/task-details/:id" element={<TaskDetail />} />
             </Routes>

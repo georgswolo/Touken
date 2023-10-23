@@ -1,21 +1,22 @@
 // import { useState } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { USER_ID } from "../pages/Home"
 import Button from "./Button"
 import PopupBar from "./TaskDetails"
 import TaskDetail from "./TaskDetails"
 import { Link } from "react-router-dom"
 
-export default function Task({task, isUnassigned, handleCheck, handleBtnClick, handlePopup}) {
+export default function Task({task, user, isUnassigned, handleCheck, handleBtnClick, handlePopup, allowEdit}) {
 
-    
     if (!isUnassigned) {
-        console.log(task)
-        if (task.user_id === USER_ID) {
+        if (task.user_id === user) {
             return (
                 <section className={`task-card `} onClick={handlePopup}>
                     <section>
-                        <input className={`task-checkbox`} type="checkbox" checked={task.completed} onChange={handleCheck}/>
+                        {
+                            allowEdit &&
+                            <input className={`task-checkbox`} type="checkbox" checked={task.completed} onChange={handleCheck}/>
+                        }
                         <p style={{display: "inline-block"}} className={`${task.completed ? "crossed" : ""}`}>
                             {task.name}
                         </p>
@@ -25,7 +26,10 @@ export default function Task({task, isUnassigned, handleCheck, handleBtnClick, h
                             <i className="fa-solid fa-coins"></i>
                             {task.coins}
                         </section>
-                        <Button  text={"Reject"} handleBtnClick={handleBtnClick}/>
+                        {
+                            allowEdit &&
+                            <Button  text={"Reject"} handleBtnClick={handleBtnClick}/>
+                        }
                     </section>
                 </section>
              )

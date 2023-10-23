@@ -7,8 +7,9 @@ import { USER_ID } from "../pages/Home";
 import TaskDetail from "./TaskDetails";
 import { Link } from "react-router-dom";
 
-export default function TaskList({isUnassigned}) {
+export default function TaskList({user_id, isUnassigned, allowEdit}) {
     const [tasks, setTasks] = useState([])
+
 
     useEffect(() => {
         async function fetchTasks() {
@@ -17,7 +18,8 @@ export default function TaskList({isUnassigned}) {
                 returnTasks = await fetchUnassignedTask()
                 console.log("unassigned task", returnTasks)
             } else {
-                returnTasks = await fetchAssignedTask(USER_ID)
+                console.log("id", user_id)
+                returnTasks = await fetchAssignedTask(user_id)
                 console.log("assigned task", returnTasks)
             }
             
@@ -33,7 +35,7 @@ export default function TaskList({isUnassigned}) {
         }
         fetchTasks()
     }
-    ,[])
+    ,[user_id])
 
     const orderTask = (a,b) => {
         if (a.completed == b.completed) {
@@ -80,7 +82,7 @@ export default function TaskList({isUnassigned}) {
         let result = tasks.filter(task => task.status_id != _task.status_id)
         setTasks([...result, {..._task, popup: !_task.popup}])
     }
-
+    console.log("test", user_id)
 
     return (
         <>  
@@ -97,10 +99,12 @@ export default function TaskList({isUnassigned}) {
                             <Task 
                                 key={task.status_id} 
                                 task={task} 
+                                user = {user_id}
                                 handleCheck={() => handleCheck(task)} 
                                 isUnassigned={isUnassigned}
                                 handleBtnClick={() => isUnassigned ? handleBtnClick(task, true) : handleBtnClick(task, false)}
                                 handlePopup={() => handlePopup(task)}
+                                allowEdit={allowEdit}
                             />
                             <section className={`popup-wrapper ${task.popup ? "active" : ""}`}></section>
                             <section className={`popup ${task.popup ? "active" : ""}`}>
@@ -125,6 +129,8 @@ export default function TaskList({isUnassigned}) {
                                     <Task 
                                         key={task.status_id} 
                                         task={task} 
+                                        user = {user_id}
+                                        allowEdit={allowEdit}
                                         handleCheck={() => handleCheck(task)} 
                                         isUnassigned={isUnassigned}
                                         handleBtnClick={() => isUnassigned ? handleBtnClick(task, true) : handleBtnClick(task, false)}

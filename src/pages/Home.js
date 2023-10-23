@@ -8,7 +8,7 @@ export default function Home() {
 
     return (
         <Template title="Tasks">
-            <TaskList isUnassigned={false}/>
+            <TaskList user_id={USER_ID} isUnassigned={false} allowEdit={true}/>
         </Template>
     );
 

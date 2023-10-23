@@ -55,7 +55,7 @@ export async function fetchAssignedTask(user_id) {
     const tasks = await getAll("task-status");
     
     // get all unassigned task
-    const assignedTasks = tasks.filter(task => task.user_id != null)
+    const assignedTasks = tasks.filter(task => task.user_id == user_id)
 
     const result = await Promise.all(assignedTasks.map(async task => {
         const task_detail = await getByID("tasks", task.task_id)
