@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 var colours = [];
 var isPriority;
+var position;
 
 export default function MessageBoard() {
 
@@ -29,12 +30,14 @@ export default function MessageBoard() {
             //if input is not blank, create a new item object
             //change colours if message is priority
             if (isToggled == true) {
-                colours = ['aquamarine', 'darkcyan'];
+                colours = ['#7eaee6'];
                 isPriority = 'PRIORITY ';
+                position = {x: 100, y: -150};
             }
             else {
-                colours = ['#daa2ff'];
+                colours = ['#e9a5e9'];
                 isPriority = 'NOTICE';
+                position = {x: 100, y: 100};
             }
             const newitem = {
                 id: uuidv4(),
@@ -42,7 +45,7 @@ export default function MessageBoard() {
                 title: isPriority,
                 color: colours[0],
                 priority: isToggled,
-                defaultPos: { x: 100, y: 0 },
+                defaultPos: position,
             };
             //add this new item object to the items array
             setItems((items) => [...items, newitem]);
@@ -70,6 +73,10 @@ export default function MessageBoard() {
         <Template title="Message Board">
             <div className="board-page">
             <div className="board">
+                <h1>Notices</h1>
+                <div className="priority-board">
+                    <h1>! Priority Notices !</h1>
+                </div>
                 {items.map((item, index) => {
                     return (
                         <Draggable
@@ -78,15 +85,12 @@ export default function MessageBoard() {
                             onStop={(e, data) => {
                                 updatePos(data, index);
                             }} >
-                            <div className="messages">
+                                <div style={{ backgroundColor: item.color }} className="message">
+                                    {`${item.item}`}
                                 <button className='delete' id="delete" onClick={(e) => deleteNote(item.id)}>
                                     X
                                 </button>
-                                <div className="title"> {item.title} </div>
-                                <div style={{ backgroundColor: item.color }} className="message">
-                                    {`${item.item}`}
                                 </div>
-                            </div>
                         </Draggable>
                     );
                 })}

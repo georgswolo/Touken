@@ -221,34 +221,21 @@ footer a {
 
 
 .post-button {
-    background-color: var(--mutedBlue);
+    background-color: var(--green);
     justify-self: end;
     display: inline;
     color: white;
     border: none;
     padding: 4px;
+    width: 10vh;
     font-size: small;
     cursor: pointer;
   }
-
-
-  .delete {
-    background-color: var(--magenta);
-    color: white;
-    font-weight: bolder;
-    top: 0;
-    padding: 3px;
-    border: none;
-    justify-self:left;
-    display: inline-block;
-  }
-
-
   .post {
     position: fixed;
     display: flex;
     justify-content:stretch;
-    width: 40vh;
+    width: 60vh;
     bottom: 8vh;
     left: 5vh;
     padding: 2px;
@@ -257,11 +244,38 @@ footer a {
   
   .board {
     position: fixed;
-    width: 60vh;
-    height: 70vh;
-    top: 15vh;
+    width: 100%;
+    height: 45vh;
+    top: 40vh;
     padding: 3px;
+    background-color: var(--darkBlue);
+  }
+
+  .board h1 {
+    color: var(--darkPink);
+    font-size: 20px;
+    font-weight: normal;
+    font-family: var(--font-lemon);
+    position: relative;
+    text-align: center;
+  }
+
+  .priority-board {
     background-color: var(--darkPink);
+    position: fixed;
+    width: 100%;
+    height: 29vh;
+    top: 11vh;
+    left: 0;
+  }
+
+  .priority-board h1 {
+    color: var(--darkBlue);
+    font-size: 22px;
+    font-weight: normal;
+    font-family: var(--font-lemon);
+    position: relative;
+    text-align: center;
   }
 
   .priority {
@@ -275,27 +289,38 @@ footer a {
 
   .messages {
     position: fixed;
-    min-width: 25px;
-    max-width: 20vh;
+    min-width: 10vh;
+    max-width: 25vh;
+    max-height: 20px;
     display: inline-block;
-    justify-content: stretch;
+    justify-content: space-evenly;
     color: whitesmoke;
     background-color: var(--lightPink);
   }
 
-  .messages .title{
-    color:rgb(0, 0, 0);
-    font-size: medium;
-    font-weight: bold;
-    padding: 4px;
-    justify-self: center;
-    display: inline-block;
-    background-color: transparent;
+
+    .message .delete {
+    background-color: var(--magenta);
+    color: white;
+    top: 0;
+    width: 18px;
+    height: 20px;
+    border: none;
+    padding: 3px;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    right: 0;
+    cursor: pointer;
   }
 
-  .message {
-    display: block;
-    padding: 8px;
+    .board .message {
+    display: inline-block;
+    position: fixed;
+    padding: 18px;
+    min-height: 30px;
+    min-width: 6vh;
+    max-width: 20vh;
     justify-content: center;
     background-color: #f5eff9;
     color:#26175e;
@@ -305,16 +330,21 @@ footer a {
     background-color: #e9a5e9;
     justify-self: end;
     display: inline;
+    width: 50px;
+    height: 35px;
     color: rgb(68, 17, 126);
     border: none;
+    margin-right: 5px;
     padding: 3px;
     font-size: small;
     cursor: pointer;
   }
   
   .toggle-button.active {
-    background-color: crimson;
-    color:#faf0f8;
+    background-color: #7eaee6;
+    color: var(--darkBlue);
+    width: 50px;
+    height: 35px;
   }
 
   .board-page {
