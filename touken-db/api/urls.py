@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, getMethods, updateMethods, addMethods
+from . import views, getMethods, updateMethods, addMethods, deleteMethods
 
 urlpatterns = [
     # All add urls go here
@@ -26,4 +26,6 @@ urlpatterns = [
     path('notices/update/', updateMethods.updateNotice),
     path('priorities/update/', updateMethods.updatePriority),
     path('rooms/update/', updateMethods.updateRoom),
+    # All delete urls go here
+    path('task-status/delete/', deleteMethods.deleteTaskStatus),
 ]

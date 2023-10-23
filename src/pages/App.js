@@ -16,7 +16,7 @@ export default function App() {
         </section>
         <div class="button-group-container">
                     <a href="/tasks" class="view-button">All Tasks</a>
-                </div>
+        </div>
         </Template>
     );
 }

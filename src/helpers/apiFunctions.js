@@ -82,3 +82,23 @@ export async function update(target, id, data) {
     return json
 }
 
+/** 
+ * Update an object in the databse
+ * 
+ * @param {string} target accepted tables
+ *  target must be in ["users", "priorities", ...]
+ * @param {number} id the requested id
+ * 
+ * @returns {JSON} the returned data as JSON object
+*/
+export async function deleteItem(target, id) {
+    const url = `${BASE_URL}${target}/delete/?id=${id}`
+    await fetch(url, {
+        method: "DELETE",
+        headers: {
+            'Accept': "application/json",
+            'Content-Type': "application/json"
+        }
+    })
+}
+

@@ -9,12 +9,13 @@ class Item(models.Model):
 class Avatar(models.Model):
     avatar_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    source = models.URLField(max_length=200)
+    source = models.CharField(max_length=200) # file name
 
 class User(models.Model):
     user_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     avatar_id = models.ForeignKey(Avatar, on_delete=models.CASCADE)
+    coins = models.PositiveIntegerField(default=0)
 
 class Room(models.Model):
     room_id = models.AutoField(primary_key=True)
@@ -28,7 +29,7 @@ class Task(models.Model):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
     coins = models.PositiveIntegerField() 
-    frequency =  models.PositiveIntegerField() #hour-based
+    frequency =  models.FloatField() #hour-based
 
 class TaskStatus(models.Model):
     status_id = models.AutoField(primary_key=True)
