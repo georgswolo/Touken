@@ -16,11 +16,11 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
             let returnTasks
             if (isUnassigned) {
                 returnTasks = await fetchUnassignedTask()
-                console.log("unassigned task", returnTasks)
+                // console.log("unassigned task", returnTasks)
             } else {
-                console.log("id", user_id)
+                // console.log("id", user_id)
                 returnTasks = await fetchAssignedTask(user_id)
-                console.log("assigned task", returnTasks)
+                // console.log("assigned task", returnTasks)
             }
             
             const configTasks = returnTasks.map(task => {
@@ -29,7 +29,7 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
                     popup: false
                 }
             })
-            console.log(configTasks)
+            // console.log(configTasks)
             setTasks(configTasks)
             
         }
@@ -82,7 +82,7 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
         let result = tasks.filter(task => task.status_id != _task.status_id)
         setTasks([...result, {..._task, popup: !_task.popup}])
     }
-    console.log("test", user_id)
+    // console.log("test", user_id)
 
     return (
         <>  
@@ -91,7 +91,7 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
             </p>
             {
                 tasks.length == 0 ? 
-                    <p>No tasks yet.</p> :
+                    <p style={{padding: "0 3% 0 3%"}}>No tasks yet.</p> :
                     tasks.sort(orderTask)
                         .filter(task => !task.completed)
                         .map(task => (
@@ -115,7 +115,7 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
             ))}
 
             { !isUnassigned &&
-                (<>
+                (<section className="completed">
                     <p className="container-header">
                         Completed Tasks
                     </p>
@@ -143,11 +143,11 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
                                 </>
                                 
                     ))} 
-                </>)
+                </section>)
             }
 
             <Link style={{display: "block", textAlign: "center"}} to="/pendings">
-                {!isUnassigned ? 
+                {allowEdit && !isUnassigned ? 
                     <button className="btn">
                         See pending tasks
                     </button> 

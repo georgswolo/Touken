@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 
 export default function Profile() {
     const { id } = useParams()
+    console.log("id:", id)
     const [users, setUsers] = useState([])
     const [current, setCurrent] = useState({})
 
@@ -28,9 +29,9 @@ export default function Profile() {
         }
 
         fetchUser()
-    }, [])
+    }, [id])
 
-    console.log(current.user_id)
+    console.log("current:", current.user_id)
     
     return (
         <Template title="Profile">

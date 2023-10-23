@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Template from "../components/Template";
 import TaskList from "../components/TaskList";
 
-export const USER_ID = 1;
+export const USER_ID = 2;
 
 export default function Home() {
 

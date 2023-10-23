@@ -171,6 +171,10 @@ input, .task-card .points i {
     font-size: 3vw;
 }
 
+.completed .reject {
+    display: none;
+}
+
 /* HEADER STYLE */
 header {
     background-color: var(--darkBlue);
@@ -368,7 +372,7 @@ footer a {
 .profile-pic.small {
     width: 10vw;
     height: 10vw;
-    border: var(--darkPink) solid 5px;
+    border: var(--darkPink) solid 4px;
 }
 
 
@@ -415,6 +419,11 @@ footer a {
     margin-right: 5%;
 }
 
+.housemates a:visited, .housemates a:link {
+    text-decoration: none;
+    color: var(--darkBlue);
+}
+
 .profile-tasks {
     background-color: var(--darkBlue);
     padding-bottom: 5%;
@@ -422,6 +431,6 @@ footer a {
     border-radius: 20px 20px 0 0;
 }
 
-.profile-tasks > * {
+.profile-tasks * {
     color: var(--textColor) !important;
 }

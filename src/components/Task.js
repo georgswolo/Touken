@@ -28,7 +28,9 @@ export default function Task({task, user, isUnassigned, handleCheck, handleBtnCl
                         </section>
                         {
                             allowEdit &&
-                            <Button  text={"Reject"} handleBtnClick={handleBtnClick}/>
+                            <section className="reject">
+                                <Button text={"Reject"} handleBtnClick={handleBtnClick}/>
+                            </section>
                         }
                     </section>
                 </section>
