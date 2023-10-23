@@ -118,7 +118,7 @@ h3 {
     justify-content: space-around;
   }
 
-  a.footer-button {
+  .footer-button {
     background-color:#dca0d3;
     color:#1c1f3d;
     border: none;
@@ -207,8 +207,8 @@ h3 {
 
   /* other button - not super sure why it is here lol */
   
-  .bright-button {
-    background-color: var(--fgColor);
+  .post-button {
+    background-color:#8fb3e2;
     color: var(--bgColor);
   }
 
@@ -226,7 +226,7 @@ h3 {
     display: flex;
     justify-content: center;
     padding: 2%;
-    background-color: #aa5ff0;
+    background-color: transparent;
     bottom: 10%;
   }
   

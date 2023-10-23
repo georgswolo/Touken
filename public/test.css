@@ -153,17 +153,24 @@ footer a {
 }
 
 
-.bright-button {
-    background-color: var(--fgColor);
-    color: var(--bgColor);
+.post-button {
+    background-color: var(--mutedBlue);
+    justify-self: end;
+    display: inline;
+    color: white;
+    border: none;
+    padding: 4px;
+    font-size: small;
+    cursor: pointer;
   }
 
 
   .delete {
-    background-color: transparent;
-    color: var(--darkBlue);
+    background-color: var(--magenta);
+    color: white;
     font-weight: bolder;
-    top: 0%;
+    top: 0;
+    padding: 3px;
     border: none;
     justify-self:left;
     display: inline-block;
@@ -173,19 +180,21 @@ footer a {
   .post {
     position: fixed;
     display: flex;
-    justify-content: center;
-    width: 50vh;
-    bottom: 10vh;
+    justify-content:stretch;
+    width: 40vh;
+    bottom: 8vh;
     left: 5vh;
+    padding: 2px;
     background-color: transparent;
   }
   
   .board {
-    position: absolute;
-    width: 90%;
-    height: 80%;
-    padding: 2%;
-    background-color: #97468b;
+    position: fixed;
+    width: 60vh;
+    height: 70vh;
+    top: 15vh;
+    padding: 3px;
+    background-color: var(--darkPink);
   }
 
   .priority {
@@ -200,10 +209,11 @@ footer a {
   .messages {
     position: fixed;
     min-width: 25px;
+    max-width: 20vh;
     display: inline-block;
     justify-content: stretch;
     color: whitesmoke;
-    background-color: #f2dbee;
+    background-color: var(--lightPink);
   }
 
   .messages .title{
@@ -230,7 +240,7 @@ footer a {
     display: inline;
     color: rgb(68, 17, 126);
     border: none;
-    padding: 2%;
+    padding: 3px;
     font-size: small;
     cursor: pointer;
   }
@@ -238,4 +248,11 @@ footer a {
   .toggle-button.active {
     background-color: crimson;
     color:#faf0f8;
+  }
+
+  .board-page {
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    width: 100vh;
   }

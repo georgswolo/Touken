@@ -67,8 +67,7 @@ export default function MessageBoard() {
     };
 
     return (
-        <Template title="Message Board">
-            <h1>Message Board</h1>
+        <Template>
             <div className="board">
                 {items.map((item, index) => {
                     return (
@@ -104,7 +103,7 @@ export default function MessageBoard() {
                 >
                     {isToggled ? 'Priority' : 'Make Priority'}
                 </button>
-                <button className="bright-button" onClick={newitem}>Post</button>
+                <button className="post-button" onClick={newitem}>Post</button>
             </div>
         </Template>
 
