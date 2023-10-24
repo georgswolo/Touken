@@ -57,6 +57,7 @@ export default function Game() {
 
         <div className="profile-tasks">
           <div className="battle-stage">
+            <h1>Evil Monster</h1>
             <div className="health-bar">
               <div className="health-bar-value">{percentTasks}%</div>
               <div
@@ -64,10 +65,9 @@ export default function Game() {
                 style={{ width: `${percentTasks}%` }}
               />
             </div>
-            <h2>
-              {completedTasks}/{totalTasks}
-            </h2>
-            <h1>Evil Monster</h1>
+            <h3>
+              {completedTasks}/{totalTasks} completed
+            </h3>
           </div>
         </div>
       </div>
