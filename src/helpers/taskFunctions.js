@@ -72,3 +72,17 @@ export async function updateUserCoins(data) {
     // console.log(response)
 }
 
+export async function fetchForGame() {
+    const task_statuses = await getAll("task-status");
+    // get all the completed task and see if any needs to be done next
+    const completedTasks = task_statuses.filter(task => task.completed)
+    const tasks = await getAll("tasks")
+    const result = {
+        total: tasks.length,
+        completed_total: completedTasks.length,
+        tasks: {
+            ...completedTasks
+        }
+    }
+    return result
+}
