@@ -232,7 +232,7 @@ footer a {
 
 
 .post-button {
-    background-color: var(--green);
+    background-color: var(--magenta);
     justify-self: end;
     display: inline;
     color: white;
@@ -240,6 +240,7 @@ footer a {
     padding: 4px;
     width: 10vh;
     font-size: small;
+    font-family: var(--font-lemon);
     cursor: pointer;
   }
   .post {
@@ -248,18 +249,23 @@ footer a {
     justify-content:stretch;
     width: 60vh;
     bottom: 8vh;
-    left: 5vh;
+    left: 3vh;
     padding: 2px;
     background-color: transparent;
+  }
+  .post .message {
+    border: 5px solid var(--mutedBlue);
+    font-size: 12px;
+    font-family: var(--font-lemon);
   }
   
   .board {
     position: fixed;
-    width: 100%;
+    width: 98%;
     height: 45vh;
-    top: 40vh;
-    padding: 3px;
+    top: 41vh;
     background-color: var(--darkBlue);
+    border: 5px solid var(--magenta);
   }
 
   .board h1 {
@@ -267,17 +273,22 @@ footer a {
     font-size: 20px;
     font-weight: normal;
     font-family: var(--font-lemon);
-    position: relative;
+    position: fixed;
+    left: 0;
+    width: 98%;
     text-align: center;
+    background-color: var(--beige);
+    border: 5px solid var(--magenta);
   }
 
   .priority-board {
     background-color: var(--darkPink);
     position: fixed;
-    width: 100%;
+    width: 98%;
     height: 29vh;
     top: 11vh;
     left: 0;
+    border: 5px solid var(--darkBlue);
   }
 
   .priority-board h1 {
@@ -287,21 +298,14 @@ footer a {
     font-family: var(--font-lemon);
     position: relative;
     text-align: center;
-  }
-
-  .priority {
-    position: absolute;
-    justify-self: center;
-    width: 90%;
-    height: 40%;
-    padding: 2%;
-    background-color: #b52052;
+    background-color: var(--beige);
+    border: 5px solid var(--darkBlue);
   }
 
   .messages {
     position: fixed;
     min-width: 10vh;
-    max-width: 25vh;
+    max-width: 15vh;
     max-height: 20px;
     display: inline-block;
     justify-content: space-evenly;
@@ -311,9 +315,10 @@ footer a {
 
 
     .message .delete {
-    background-color: var(--magenta);
-    color: white;
+    color: var(--magenta);
     top: 0;
+    background-color: transparent;
+    font-weight: bolder;
     width: 18px;
     height: 20px;
     border: none;
@@ -328,10 +333,12 @@ footer a {
     .board .message {
     display: inline-block;
     position: fixed;
-    padding: 18px;
+    padding: 10px;
     min-height: 30px;
     min-width: 6vh;
-    max-width: 20vh;
+    font-size: 14px;
+    max-width: 15vh;
+    border: 3px solid var(--beige);
     justify-content: center;
     background-color: #f5eff9;
     color:#26175e;
@@ -339,22 +346,23 @@ footer a {
 
   .toggle-button {
     background-color: #e9a5e9;
+    font-family: var(--font-lemon);
     justify-self: end;
     display: inline;
-    width: 50px;
+    width: 60px;
     height: 35px;
     color: rgb(68, 17, 126);
     border: none;
     margin-right: 5px;
     padding: 3px;
-    font-size: small;
+    font-size: 12px;
     cursor: pointer;
   }
   
   .toggle-button.active {
     background-color: #7eaee6;
     color: var(--darkBlue);
-    width: 50px;
+    width: 60px;
     height: 35px;
   }
 
