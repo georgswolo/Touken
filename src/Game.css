@@ -61,6 +61,11 @@
     margin-top: 150%;
     width: 30vw;
   }
+
+  .task-completed {
+    overflow-y:scroll;
+   
+  }
   
 
 
