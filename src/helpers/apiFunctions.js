@@ -1,6 +1,6 @@
 // import fetch from "node-fetch"
 
-const BASE_URL = "http://127.0.0.1:8000/"
+const BASE_URL = "http://10.89.182.66:8000/"
 
 /** 
  * Get all objects in the databse

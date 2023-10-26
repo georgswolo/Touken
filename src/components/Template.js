@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import Header from "./Header";
 import Footer from "./Footer";
 
-function Template({ title, children }) {
+function Template({ title, children, backBtn }) {
     return (
         <>
-            <Header title={title}></Header>
+            <Header title={title} backBtn={backBtn}></Header>
             <main>
                 {children}
             </main>
