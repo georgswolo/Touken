@@ -10,7 +10,7 @@ export default function TaskDetail({task, handleCloseBtn}) {
 
     return (
         <section className='task-detail'>
-            <section class="popup-header">
+            <section className="popup-header">
                 <p className='container-header'>
                     {task.name}
                 </p>

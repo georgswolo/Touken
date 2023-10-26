@@ -121,7 +121,7 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
                     </p>
                     {
                         tasks.length == 0 ? 
-                            <p>No tasks yet.</p> :
+                            <p style={{padding: "0 3% 0 3%"}}>No tasks yet.</p> :
                             tasks.sort(orderTask)
                                 .filter(task => task.completed)
                                 .map(task => (
@@ -153,6 +153,7 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
                     </button> 
                 : ""}
             </Link>
+            
         </>
     )
 }

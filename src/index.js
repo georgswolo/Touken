@@ -9,6 +9,7 @@ import Leaderboard from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import Pendings from "./pages/Pendings";
 import TaskDetail from "./components/TaskDetails";
+import TaskCollection from "./pages/TaskCollection";
 
 
 ReactDOM.render(
@@ -23,6 +24,7 @@ ReactDOM.render(
                 <Route path="/profile/:id" element={<Profile />} />
                 <Route path="/pendings" element={<Pendings />} />
                 <Route path="/task-details/:id" element={<TaskDetail />} />
+                <Route path="/tasks" element={<TaskCollection />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

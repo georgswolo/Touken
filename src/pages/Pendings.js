@@ -5,7 +5,7 @@ import TaskList from "../components/TaskList";
 
 export default function Pendings() {
     return (
-        <Template title="Tasks">
+        <Template title="Tasks" backBtn={true}>
             <TaskList isUnassigned={true}/>
         </Template>
     );

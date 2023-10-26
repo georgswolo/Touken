@@ -108,6 +108,8 @@ input, .task-card .points i {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 0 10% 0;
+
 }
 
 .popup-wrapper {
@@ -153,7 +155,6 @@ input, .task-card .points i {
     color: var(--textColor);
     font-size: 5vw;
     text-align: left;
-    margin: 0 0 10% 0;
 }
 
 .details section {
