@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika&family=Lemon&family=Monomaniac+One&display=swap');
 
   /** Game **/
 
@@ -35,6 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: aliceblue;
   }
   
   .sprites {
@@ -67,6 +69,31 @@
    
   }
   
+.battle-area {
+    background-color: var(--darkBlue);
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-radius: 20px 20px 0px 0px;
+}
+.battle-area h1, h3, h4{
+    color:#fcefff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-family: 'Inika', serif;
+    font-weight: 100;
+}
+
+
+.battle-area h1 {
+    color: rgb(255, 139, 168);
+}
+
+.notifications{
+    background-color: #c88ed6;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    overflow-y: scroll;
+    bottom: 0;
+}
 
 
 

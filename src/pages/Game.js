@@ -10,14 +10,53 @@ import "../Game.css";
 
 export default function Game() {
     const [gameData, setGameData] = useState({});
+    const [TEST, setUsers] = useState({});
     useEffect(() => {
         const results = async () => {
             const response = await fetchForGame();
             setGameData(response);
         };
         results();
+
+        const getUsers = async () => {
+            var tests = [];
+            var imp = gameData["tasks"];
+            for (var i in imp) {
+                const tasks = await getByID("tasks", imp[i]["task_id"]);
+                const users = await getByID("users", imp[i]["user_id"]);
+                tests.push([
+                    JSON.stringify(tasks["name"]),
+                    JSON.stringify(users["name"]),
+                ]);
+            }
+            setUsers(tests);
+
+            //  tests.push(i);
+        };
+        getUsers();
     }, []);
-    console.log(gameData);
+    // console.log(gameData);
+
+    // function test(data) {
+    //     var tests = [];
+    //     var imp = data["tasks"];
+
+    //     const type = async () => {
+    //         for (var i in imp) {
+    //             const tasks = await getByID("tasks", imp[i]["task_id"]);
+    //             const users = await getByID("users", imp[i]["user_id"]);
+    //             tests.push([
+    //                 JSON.stringify(tasks["name"]),
+    //                 JSON.stringify(users["name"]),
+    //             ]);
+    //         }
+    //     };
+    //     type();
+
+    //     //  tests.push(i);
+    //     console;
+    //     return tests;
+    // }
 
     function test(gameData) {
         var tests = [];
@@ -45,6 +84,8 @@ export default function Game() {
     var completedTasks = totalTasks - getTotalTasks(gameData);
     var percentTasks = (completedTasks / totalTasks) * 100;
 
+    var test1 = test(gameData).toString();
+
     return (
         <Template title="Game">
             <div className="battle">
@@ -58,7 +99,7 @@ export default function Game() {
                     </div>
                 </div>
 
-                <div className="profile-tasks">
+                <div className="battle-area">
                     <div className="battle-stage">
                         <h1>Evil Monster</h1>
                         <div className="health-bar">
@@ -71,12 +112,13 @@ export default function Game() {
                             />
                         </div>
                         <h3>
-                            {completedTasks}/{totalTasks} completed
+                            {completedTasks}/{totalTasks} tasks completed
                         </h3>
+                        <h4>Help Ken defeat the monster by doing tasks!</h4>
                     </div>
                 </div>
 
-                <div className="testss">
+                <div className="notifications">
                     {test(gameData["tasks"]).map((i) => (
                         <div className="task-card">
                             {i[0].toString()} has been completed by{" "}
@@ -85,6 +127,7 @@ export default function Game() {
                     ))}
                 </div>
             </div>
+            <script></script>
         </Template>
     );
 }
