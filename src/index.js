@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import MessageBoard from "./pages/MessageBoard";
 import Game from "./pages/Game";
-import Leaderboard from "./pages/Leaderboard";
+import Leaders from "./pages/Leaderboard";
 import Profile from "./pages/Profile";
 import Pendings from "./pages/Pendings";
 import TaskDetail from "./components/TaskDetails";
@@ -18,7 +18,7 @@ ReactDOM.render(
                 <Route path="/" element={<Home />} />
                 <Route path="/notice" element={<MessageBoard />} />
                 <Route path="/game" element={<Game />} />
-                <Route path="/leaderboard" element={<Leaderboard />} />
+                <Route path="/leaderboard" element={<Leaders />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/profile/:id" element={<Profile />} />
                 <Route path="/pendings" element={<Pendings />} />
