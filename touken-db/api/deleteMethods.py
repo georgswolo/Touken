@@ -12,8 +12,20 @@ def deleteTaskStatus(request):
     '''
     try: 
         id = request.query_params['id']
-        print(id)
         task_status = TaskStatus.objects.get(status_id = id)
         task_status.delete()
+    except:
+        return Response(None)
+    
+@api_view(['DELETE'])
+def deleteTask(request):
+    '''
+        Get all users if id not specified, get user by id otherwise
+        :returns: the data associated
+    '''
+    try: 
+        id = request.query_params['id']
+        task = Task.objects.get(task_id = id)
+        task.delete()
     except:
         return Response(None)

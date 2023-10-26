@@ -146,13 +146,36 @@ export default function TaskList({user_id, isUnassigned, allowEdit}) {
                 </section>)
             }
 
-            <Link style={{display: "block", textAlign: "center"}} to="/pendings">
-                {allowEdit && !isUnassigned ? 
-                    <button className="btn">
-                        See pending tasks
-                    </button> 
-                : ""}
+            <section 
+                style={{
+                    display: "flex",
+                    width: "95%",
+                    justifyContent: "space-around"
+                }}
+            >
+                <Link 
+                    className="homepage-btn"
+                    to="/pendings"
+                >
+                    {allowEdit && !isUnassigned ? 
+                        <button className="btn">
+                            See pending tasks
+                        </button> 
+                    : ""}
+                </Link>
+                <Link 
+                    className="homepage-btn" 
+                    to="/tasks"
+                >
+                    {
+                        allowEdit &&
+                        <button className="btn">
+                            See all tasks
+                        </button> 
+                    }
             </Link>
+            </section>
+            
             
         </>
     )

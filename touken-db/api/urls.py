@@ -28,4 +28,5 @@ urlpatterns = [
     path('rooms/update/', updateMethods.updateRoom),
     # All delete urls go here
     path('task-status/delete/', deleteMethods.deleteTaskStatus),
+    path('tasks/delete/', deleteMethods.deleteTask),
 ]

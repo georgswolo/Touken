@@ -49,6 +49,13 @@ main {
 
 /* HOME (TASK PAGE)/ UNASSIGNED TASK PAGE */
 
+.homepage-btn {
+    display: "block";
+    text-align: center;
+    width: 40vw;
+    font-size: 5vw !important;
+}
+
 .task-card {
     color: var(--textColor);
     display: flex;
@@ -170,6 +177,7 @@ input, .task-card .points i {
     border-radius: 10px;
     padding: 5%;
     font-size: 3vw;
+    max-width: 50%;
 }
 
 .completed .reject {
@@ -449,4 +457,41 @@ footer a {
 
 .profile-tasks * {
     color: var(--textColor) !important;
+}
+
+/* TASK LIST */
+.collection { 
+    transform: translateY(35%) !important;
+}
+
+.add-popup {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 50vh;
+    width: 70vw;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.add-popup .popup-header {
+    margin-bottom: 0 !important;
+}
+
+.add-popup section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+.add-popup section input, textarea {
+    width: 100%;
+    margin-top: 4%;
+    padding: 2%;
+    box-sizing: border-box;
+    background-color: var(--lightPink);
+    color: var(--darkBlue);
+    font-family: var(--font-inika);
+    border-radius: 10px;
+    border: transparent
 }
