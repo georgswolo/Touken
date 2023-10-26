@@ -73,7 +73,7 @@
     background-color: var(--darkBlue);
     padding-bottom: 5%;
     padding-top: 5%;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 20px 20px 20px 20px;
 }
 .battle-area h1, h3, h4{
     color:#fcefff;
@@ -85,16 +85,23 @@
 
 .battle-area h1 {
     color: rgb(255, 139, 168);
+    font-family: "Lemon", serif !important;
 }
 
 .notifications{
-    background-color: #c88ed6;
+  
     padding-bottom: 5%;
     padding-top: 5%;
     overflow-y: scroll;
     bottom: 0;
 }
 
+.notifications h1 {
+    font-size: larger;
+    font-family: "Lemon", serif;
+    padding-left: 4%;
+    
+}
 
 
 

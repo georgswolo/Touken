@@ -119,6 +119,7 @@ export default function Game() {
                 </div>
 
                 <div className="notifications">
+                    <h1>Tasks Completed</h1>
                     {test(gameData["tasks"]).map((i) => (
                         <div className="task-card">
                             {i[0].toString()} has been completed by{" "}
