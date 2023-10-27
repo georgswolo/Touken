@@ -3,14 +3,39 @@ import Template from "../components/Template";
 import { fetchForGame } from "../helpers/taskFunctions";
 import enemyImage from "../assets/enemy-sprite4.gif";
 import playerImage from "../assets/toucan.gif";
-import { getByID } from "../helpers/apiFunctions";
+import { getAll, getByID } from "../helpers/apiFunctions";
+import { Link, useParams } from "react-router-dom";
 import "../Game.css";
 
 //../src/helpers/apiFunctions.js
 
 export default function Game() {
+    const { id } = useParams()
     const [gameData, setGameData] = useState({});
-    const [TEST, setUsers] = useState({});
+   // const [TEST, setUsers] = useState({});
+
+    const [users, setUsers] = useState([])
+
+    useEffect(() => {
+        const results = async () => {
+            const response = await fetchForGame();
+            setGameData(response);
+        };
+        results();
+        const fetchUser = async () => {
+           const response = await getAll("users")
+           const userData = await Promise.all(response.map(async user => {
+            const task = await getByID("tasks", gameData["tasks"])
+           return {
+            ...user, source: task.source
+        }
+    }))
+    setUsers(userData)
+        }
+        fetchUser()
+    }, [id])
+
+    /** 
     useEffect(() => {
         const results = async () => {
             const response = await fetchForGame();
@@ -58,6 +83,8 @@ export default function Game() {
     //     return tests;
     // }
 
+    */
+
     function test(gameData) {
         var tests = [];
         for (var i in gameData) {
@@ -85,6 +112,7 @@ export default function Game() {
     var percentTasks = (completedTasks / totalTasks) * 100;
 
     var test1 = test(gameData).toString();
+    console.log(test1)
 
     return (
         <Template title="Game">
