@@ -449,3 +449,50 @@ footer a {
 .profile-tasks * {
     color: var(--textColor) !important;
 }
+
+.leaderboard-frame {
+width: 95%;
+margin: 2%;
+background-color: var(--darkBlue);
+display: inline-block;
+justify-content: center;
+align-items: center;
+border-radius: 20px 20px 0 0;
+}
+
+.leaderboard-frame table {
+background-color: var(--darkBlue);
+font-family: var(--font-lemon);
+border-collapse: separate;
+border-spacing: 0 15px;
+align-items: flex-start;
+border-radius: 20px;
+margin-left: 15px;
+margin-right: 15px;
+}
+
+thead {
+    display: none;
+}
+
+.leaderboard-frame
+tbody, 
+th,
+  td {
+    width: 150px;
+    text-align: start;
+    border: 3px solid var(--darkPink);
+    padding: 5%;
+    background-color: var(--darkPink);
+    color: white;
+  }
+
+.leaderboard-frame h4 {
+font-size: 20px;
+font-family: var(--font-lemon);
+width: 100%;
+text-align: center;
+justify-content: center;
+padding-top: 5%;
+color: white;
+}
