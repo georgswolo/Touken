@@ -2,6 +2,8 @@ import Template from "../components/Template";
 import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 import { v4 as uuidv4 } from "uuid";
+import { getAll, getByID, add } from "../helpers/apiFunctions";
+import { Link, useParams } from "react-router-dom";
 
 var colours = [];
 var isPriority;
@@ -9,7 +11,9 @@ var position;
 
 export default function MessageBoard() {
 
-    const [item, setItem] = useState("");
+    const { id } = useParams();
+
+    const [item, setItem] = useState([]);
     const [items, setItems] = useState(
         JSON.parse(localStorage.getItem("items")) || []
     );
@@ -25,17 +29,18 @@ export default function MessageBoard() {
         setToggled(!isToggled);
     };
 
+
     const newitem = () => {
         if (item.trim() !== "") {
             //if input is not blank, create a new item object
             //change colours if message is priority
             if (isToggled == true) {
-                colours = ['#7eaee6'];
+                colours = ['#d7e4d9'];
                 isPriority = 'PRIORITY ';
                 position = {x: 100, y: -150};
             }
             else {
-                colours = ['#e9a5e9'];
+                colours = ['#acaecf'];
                 isPriority = 'NOTICE';
                 position = {x: 100, y: 100};
             }
@@ -56,7 +61,7 @@ export default function MessageBoard() {
         }
     };
     useEffect(() => {
-        localStorage.setItem("items", JSON.stringify(items));
+        add("item", JSON.stringify(items));
     }, [items]);
 
     const updatePos = (data, index) => {

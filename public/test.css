@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inika&family=Lemon&family=Monomaniac+One&display=swap');
 
 :root {
-    --darkBlue: #2B425F;
-    --darkPink: #D3629F;
-    --lightPink: #FFCCF4;
-    --beige: #EDE8E8;
-    --green: #31A69F;
+    --darkBlue: #2b6777;
+    --darkPink: #5a2975;
+    --lightPink: #ce9de9;
+    --beige: #c8d8e4;
+    --green: #0a511d;
     --magenta: #9A1F69;
-    --mutedBlue: #386BA7;
+    --mutedBlue: #005b64;
     --borderBeige: #F0F4FD;
-    --textColor: #FFFFFF;
+    --textColor: #fffffe;
     --font-inika: 'Inika', serif;
     --font-lemon: 'Lemon', serif;
     --font-game: 'Monomaniac One', sans-serif;
@@ -71,7 +71,7 @@ main {
 
 .task-card .points {
     font-family: var(--font-game);
-    color: var(--lightPink);
+    color: var(--beige);
     padding-right: var(--margin);
 }
 
@@ -94,7 +94,7 @@ input, .task-card .points i {
 }
 
 .btn.reject {
-    background-color: crimson;
+    background-color: #941b1a;
 }
 
 .task-btn {
@@ -239,9 +239,13 @@ footer a {
     background-color: var(--darkPink);
 }
 
+.active .icon{
+    color: var(--beige);
+}
+
 
 .post-button {
-    background-color: var(--magenta);
+    background-color: var(--mutedBlue);
     justify-self: end;
     display: inline;
     color: white;
@@ -274,7 +278,7 @@ footer a {
     height: 45vh;
     top: 41vh;
     background-color: var(--darkBlue);
-    border: 5px solid var(--magenta);
+    border: 5px solid var(--darkPink);
   }
 
   .board h1 {
@@ -287,7 +291,7 @@ footer a {
     width: 98%;
     text-align: center;
     background-color: var(--beige);
-    border: 5px solid var(--magenta);
+    border: 5px solid var(--darkPink);
   }
 
   .priority-board {
@@ -342,6 +346,7 @@ footer a {
     .board .message {
     display: inline-block;
     position: fixed;
+    font-family: sans-serif;
     padding: 10px;
     min-height: 30px;
     min-width: 6vh;
@@ -354,23 +359,26 @@ footer a {
   }
 
   .toggle-button {
-    background-color: #e9a5e9;
+    background-color: #acaecf;
     font-family: var(--font-lemon);
     justify-self: end;
     display: inline;
     width: 60px;
     height: 35px;
-    color: rgb(68, 17, 126);
-    border: none;
+    color: #252638;
+    border: 2px solid var(--darkPink);
+    padding: 2px;
     margin-right: 5px;
     padding: 3px;
-    font-size: 12px;
+    font-size: 11px;
     cursor: pointer;
   }
   
   .toggle-button.active {
-    background-color: #7eaee6;
+    background-color: #d7e4d9;
     color: var(--darkBlue);
+    border: 2px solid var(--darkBlue);
+    padding: 2px;
     width: 60px;
     height: 35px;
   }
@@ -421,7 +429,7 @@ footer a {
     font-size: 6vw;
     justify-content: space-around;
     padding-top: 2%;
-    color: var(--lightPink);
+    color: var(--textColor);
     font-family: var(--font-game);
     align-items: center;
 }
