@@ -21,10 +21,12 @@ export default function Game() {
 
     function test(gameData) {
         var tests = [];
+        const usernames = ["Hazel", "Beth", "Georgie", "Catherine", "Jane", "Talia"]
         for (var i in gameData) {
             var type = gameData[i].task_id;
             var type1 = gameData[i].user_id;
-            tests.push([type, type1]);
+            var name = usernames[type1];
+            tests.push([type, name]);
         }
         //  tests.push(i);
 
@@ -43,7 +45,7 @@ export default function Game() {
     //Variables
     var totalTasks = getCompletedTasks(gameData);
     var completedTasks = totalTasks - getTotalTasks(gameData);
-    var percentTasks = (completedTasks / totalTasks) * 100;
+    var percentTasks = Math.round((completedTasks / totalTasks) * 100);
 
     return (
         <Template title="Game">
@@ -79,8 +81,8 @@ export default function Game() {
                 <div className="testss">
                     {test(gameData["tasks"]).map((i) => (
                         <div className="task-card">
-                            {i[0].toString()} has been completed by{" "}
-                            {i[1].toString()}
+                            A task has been completed by{" "}
+                            {i[1].toString()}!!
                         </div>
                     ))}
                 </div>

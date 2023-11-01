@@ -24,8 +24,11 @@ export default function Leaders() {
         fetchUser()
     }, [id],
         users.forEach(user => {
+          
             user['pics'] = <section key={user.user_id} className="housemate-profile">
+                  <Link to={`/profile/${user.user_id}`}>
                 <ProfilePic profile={user.source} isBig={false} />
+                </Link>
             </section>
         }),
         users.forEach(user => {
@@ -37,14 +40,14 @@ export default function Leaders() {
         <Template title="Leaderboard">
             <section className="leaderboard-frame">
             <h4>Weekly</h4>
-                <Leaderboard
+                  <Leaderboard
                     className="leaderboard"
                     scoringMetric="coins"
                     id="pics"
                     cell1="name"
                     cell2="tokens"
                     items={users}>
-                </Leaderboard>
+                </Leaderboard> 
             </section>
         </Template>
     )
