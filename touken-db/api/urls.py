@@ -29,4 +29,6 @@ urlpatterns = [
     # All delete urls go here
     path('task-status/delete/', deleteMethods.deleteTaskStatus),
     path('tasks/delete/', deleteMethods.deleteTask),
+    path('priorities/delete/', deleteMethods.deletePriority),
+    path('notices/delete/', deleteMethods.deleteNotice),
 ]

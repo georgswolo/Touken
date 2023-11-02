@@ -29,3 +29,29 @@ def deleteTask(request):
         task.delete()
     except:
         return Response(None)
+    
+@api_view(['DELETE'])
+def deleteNotice(request):
+    '''
+        Get all users if id not specified, get user by id otherwise
+        :returns: the data associated
+    '''
+    try: 
+        id = request.query_params['id']
+        notice = Notice.objects.get(notice_id = id)
+        notice.delete()
+    except:
+        return Response(None)
+    
+@api_view(['DELETE'])
+def deletePriority(request):
+    '''
+        Get all users if id not specified, get user by id otherwise
+        :returns: the data associated
+    '''
+    try: 
+        id = request.query_params['id']
+        prio = Priority.objects.get(prio_id = id)
+        prio.delete()
+    except:
+        return Response(None)

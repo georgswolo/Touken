@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import Pendings from "./pages/Pendings";
 import TaskDetail from "./components/TaskDetails";
 import TaskCollection from "./pages/TaskCollection";
+//import MessageBoard from "./pages/Board";
 
 
 ReactDOM.render(

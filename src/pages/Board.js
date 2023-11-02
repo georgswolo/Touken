@@ -1,40 +1,191 @@
+import Template from "../components/Template";
 import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 import { v4 as uuidv4 } from "uuid";
-import Template from "../components/Template";
+import { getAll, getByID, add, deleteItem } from "../helpers/apiFunctions";
+import { Link, useParams } from "react-router-dom";
+import { USER_ID } from "./Home";
 
 var colours = [];
 var isPriority;
+var position;
 
 export default function MessageBoard() {
 
-    const [item, setItem] = useState("");
-    const [items, setItems] = useState(
-        JSON.parse(localStorage.getItem("items")) || []
-    );
-    const keyPress = (event) => {
-        var code = event.keyCode || event.which;
-        if (code === 13) {
-            newitem();
-        }
-    };
+    const { id } = useParams();
+
+    const [item, setItem] = useState([]);
+    const [notices, setNotices] = useState([])
     const [isToggled, setToggled] = useState(false);
 
     const toggle = () => {
         setToggled(!isToggled);
     };
 
+    const blankNotice = {
+        id: null,
+        item: null,
+        color: null,
+        priority: null,
+        defaultPos: null,
+    };
+
+    const [messageTemplate, setTemplate] = useState(blankNotice);
+
+
+    useEffect(() => {
+        const fetchNotices = async () => {
+            const allNotices = await getAll("notices");
+            const allPriorities = await getAll("priorities")
+            const notes = allNotices.map(notice => {
+                return {
+                    id: notice.notice_id,
+                    item: notice.description,
+                    color: ['#acaecf'],
+                    priority: 'NOTICE',
+                    defaultPos: {x: 100, y: 100}
+                }
+            })
+            const priorities = allPriorities.map(prio => {
+                return {
+                    id: prio.prio_id,
+                    item: prio.description,
+                    colours: ['#d7e4d9'],
+                    isPriority: 'PRIORITY',
+                    position: {x: 100, y: -150},
+                }
+            })
+            setNotices([
+                ...notes,
+                ...priorities
+            ])
+            console.log(notices)
+        }
+        fetchNotices()
+    }, []);
+
+    const refetch = async () => {
+        const allNotices = await getAll("notices");
+        const allPriorities = await getAll("priorities")
+            const notes = allNotices.map(notice => {
+                return {
+                    id: notice.notice_id,
+                    item: notice.description,
+                    color: ['#acaecf'],
+                    priority: 'NOTICE',
+                    defaultPos: {x: 100, y: 100}
+                }
+            })
+            const priorities = allPriorities.map(prio => {
+                return {
+                    id: prio.prio_id,
+                    item: prio.description,
+                    colours: ['#d7e4d9'],
+                    isPriority: 'PRIORITY',
+                    position: {x: 100, y: -150},
+                }
+            })
+            setNotices([
+                ...notes,
+                ...priorities
+            ])
+    }
+
+    const addNotice = async () => {
+        const isEmpty = Object.values(item).every(x => x === null || x === '');
+        if (isEmpty) {
+            alert("Your notice can't be empty!")
+        } else {
+
+            let  note = {
+                description: item,
+                user_id: USER_ID
+            }
+
+            if (isToggled == true) {
+                // notice = {
+                //     id: uuidv4(),
+                //     item: item,
+                //     colours: ['#d7e4d9'],
+                //     isPriority: 'PRIORITY ',
+                //     position: {x: 100, y: -150},
+                // }
+                
+                let result = await add("priorities", note)
+                console.log("prio", result)
+            }
+            else {
+                let result = await add("notices", note)
+                console.log("notice", result)
+            }
+            await refetch()
+        }
+    }
+
+    const deleteMessage = async (item) => {
+        console.log("delete", item)
+
+        if (item.isPriority == 'PRIORITY') {
+            await deleteItem("priorities", item.id)
+        } else {
+            await deleteItem("notices", item.id)
+        }
+        const allNotices = await getAll("notices");
+        const allPriorities = await getAll("priorities")
+        const notes = allNotices.map(notice => {
+            return {
+                id: notice.notice_id,
+                item: notice.description,
+                color: ['#acaecf'],
+                priority: 'NOTICE',
+                defaultPos: {x: 100, y: 100}
+            }
+        })
+        const priorities = allPriorities.map(prio => {
+            return {
+                id: prio.prio_id,
+                item: prio.description,
+                colours: ['#d7e4d9'],
+                isPriority: 'PRIORITY',
+                position: {x: 100, y: -150},
+            }
+        })
+        setNotices([
+            ...notes,
+            ...priorities
+        ])
+        console.log("test", notices)
+    }
+
+      const updatePos = (data, index) => {
+        let newArr = [...notices];
+        newArr[index].defaultPos = { x: data.x, y: data.y };
+        setNotices(newArr);
+    };
+
+
+    const keyPress = (event) => {
+        console.log(item)
+        var code = event.keyCode || event.which;
+        if (code === 13) {
+            addNotice();
+        }
+    };
+
+/*
     const newitem = () => {
         if (item.trim() !== "") {
             //if input is not blank, create a new item object
             //change colours if message is priority
             if (isToggled == true) {
-                colours = ['aquamarine', 'darkcyan'];
+                colours = ['#d7e4d9'];
                 isPriority = 'PRIORITY ';
+                position = {x: 100, y: -150};
             }
             else {
-                colours = ['#daa2ff'];
-                isPriority = null;
+                colours = ['#acaecf'];
+                isPriority = 'NOTICE';
+                position = {x: 100, y: 100};
             }
             const newitem = {
                 id: uuidv4(),
@@ -42,7 +193,7 @@ export default function MessageBoard() {
                 title: isPriority,
                 color: colours[0],
                 priority: isToggled,
-                defaultPos: { x: 100, y: 0 },
+                defaultPos: position,
             };
             //add this new item object to the items array
             setItems((items) => [...items, newitem]);
@@ -53,7 +204,7 @@ export default function MessageBoard() {
         }
     };
     useEffect(() => {
-        localStorage.setItem("items", JSON.stringify(items));
+        add("item", JSON.stringify(items));
     }, [items]);
 
     const updatePos = (data, index) => {
@@ -65,27 +216,29 @@ export default function MessageBoard() {
     const deleteNote = (id) => {
         setItems(items.filter((item) => item.id !== id));
     };
-
+*/
     return (
-        <Template>
+        <Template title="Message Board">
+            <div className="board-page">
             <div className="board">
-                {items.map((item, index) => {
+                <h1>Notices</h1>
+                <div className="priority-board">
+                    <h1>! Priority Notices !</h1>
+                </div>
+                {notices.map((item, index) => {
                     return (
                         <Draggable
                             key={item.id}
                             defaultPosition={item.defaultPos}
                             onStop={(e, data) => {
                                 updatePos(data, index);
-                            }} >
-                            <div className="messages">
-                                <button className='delete' id="delete" onClick={(e) => deleteNote(item.id)}>
-                                    X
-                                </button>
-                                <div className="title"> {item.title} </div>
+                            }} >          
                                 <div style={{ backgroundColor: item.color }} className="message">
                                     {`${item.item}`}
+                                <button className='delete' id="delete" onClick={(e) => deleteMessage(item)}>
+                                    X
+                                </button>
                                 </div>
-                            </div>
                         </Draggable>
                     );
                 })}
@@ -103,7 +256,8 @@ export default function MessageBoard() {
                 >
                     {isToggled ? 'Priority' : 'Make Priority'}
                 </button>
-                <button className="post-button" onClick={newitem}>Post</button>
+                <button className="post-button" onClick={addNotice}>Post</button>
+            </div>
             </div>
         </Template>
 
